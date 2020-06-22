@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
@@ -13,7 +14,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
 <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PageAcceuilController">
@@ -273,33 +276,51 @@
                 </Tab>
                   <Tab id="Graphiques" text="Graphiques">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <AnchorPane fx:id="grapheArea" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="143.0" text="Nombre d'or" />
-                              <Button layoutX="14.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="141.0" text="Sbires tués" />
-                              <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="141.0" text="Dégâts infligés" />
-                              <Button layoutX="14.0" layoutY="117.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" text="Soins Prodigués" />
-                              <Button layoutX="14.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="141.0" text="Tourelles détruites" />
-                              <Button layoutX="14.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="Nombres d'élimination" />
-                              <Button layoutX="14.0" layoutY="220.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="Nombres de morts" />
-                              <Button layoutX="14.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" text="Nombres d'assistance" />
-                              <BarChart alternativeColumnFillVisible="true" layoutX="207.0" layoutY="17.0" legendSide="LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="276.0" prefWidth="313.0" titleSide="LEFT" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
-                                <xAxis>
-                                  <CategoryAxis side="BOTTOM" />
-                                </xAxis>
-                                <yAxis>
-                                  <NumberAxis animated="false" autoRanging="false" forceZeroInRange="false" minorTickVisible="false" side="TOP" tickLabelsVisible="false" tickMarkVisible="false" />
-                                </yAxis>
-                              </BarChart>
+                              <HBox fx:id="grapheArea" layoutX="-3.0" prefHeight="360.0" prefWidth="534.0">
+                                 <children>
+                                    <VBox prefHeight="335.0" prefWidth="255.0" spacing="10.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="143.0" text="Nombre d'or" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="141.0" text="Sbires tués" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="141.0" text="Dégâts infligés">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="139.0" text="Soins Prodigués" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="141.0" text="Tourelles détruites" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="145.0" text="Nombres d'élimination" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="145.0" text="Nombres de morts" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="145.0" text="Nombres d'assistance" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="25.0" />
+                                       </HBox.margin>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <BarChart fx:id="barchart" animated="false" horizontalGridLinesVisible="false" legendVisible="false" rotate="90.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                      <xAxis>
+                                        <CategoryAxis layoutX="90.0" layoutY="-90.0" prefWidth="334.0" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis animated="false" autoRanging="false" minorTickVisible="false" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </HBox>
                            </children>
                         </AnchorPane>
                      </content>
                   </Tab>
-                  <Tab id="Graphiques" text="Avantage">
+                  <Tab id="Graphiques" closable="false" text="Avantage">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <LineChart layoutX="25.0" layoutY="14.0" prefHeight="307.0" prefWidth="485.0">
+                              <LineChart fx:id="linechart" animated="false" layoutX="25.0" layoutY="14.0" prefHeight="307.0" prefWidth="485.0">
                                 <xAxis>
                                   <CategoryAxis side="BOTTOM" />
                                 </xAxis>

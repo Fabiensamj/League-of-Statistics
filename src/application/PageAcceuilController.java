@@ -8,11 +8,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView.EditEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
@@ -27,6 +29,12 @@ public class PageAcceuilController {
 	
 	@FXML
 	private TextArea Nom;
+	@FXML
+    private BarChart<String, Integer> barchart;
+	/* @FXML
+    private LineChart<Integer,Integer> linechart;*/
+	
+	
 	
 	@FXML
 	protected void PushConnexion(ActionEvent e) throws IOException {
@@ -36,10 +44,11 @@ public class PageAcceuilController {
 			app_stage.setScene(home_s);
 			app_stage.show();
 			
-			model1.setNom(Nom);
+			
+			/*model1.setNom(Nom);
 			
 			TextNomInvocateur.setText(model1.getNom());
-			System.out.printf(model1.getNom());
+			System.out.printf(model1.getNom());*/
 	}
 	
 	@FXML
@@ -59,5 +68,67 @@ public class PageAcceuilController {
 		app_stage.setScene(home_s);
 		app_stage.show();
 	}
+
+	@FXML
+	protected void PushGraphe(ActionEvent e)throws IOException {
+		
+		/*CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Programming Language");
+ 
+        NumberAxis yAxis = new NumberAxis();
+          
+        yAxis.setLabel("Percent");
+ 
+        // Create a BarChart
+        BarChart<Number, String> barchart = new BarChart<Number, String>(yAxis, xAxis);
+		*/
+		barchart.getData().clear();
+		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
+		series.getData().add(new XYChart.Data<>("test 1", 100));
+		series.getData().add(new XYChart.Data<>("test 2", 10));
+		series.getData().add(new XYChart.Data<>("test 3", 200));
+		series.getData().add(new XYChart.Data<>("test 4", 50));
+		series.getData().add(new XYChart.Data<>("test 5", 220));
+		series.getData().add(new XYChart.Data<>("test 6", 100));
+		series.getData().add(new XYChart.Data<>("test 7", 10));
+		series.getData().add(new XYChart.Data<>("test 8", 200));
+		series.getData().add(new XYChart.Data<>("test 9", 50));
+		series.getData().add(new XYChart.Data<>("test 10", 220));
+		barchart.getData().add(series);
+		barchart.getXAxis().setTickLabelRotation(-90);
+		barchart.getYAxis().setTickLabelsVisible(false);
+	    barchart.getYAxis().setOpacity(0);
+		
+		
+		
+		
+	}
+	/*
+	@FXML
+	protected void PushAvantage(ActionEvent e)throws IOException {
+		
+		
+		linechart.getData().clear();
+		XYChart.Series series1 = new XYChart.Series();
+		//Series<Integer, Integer> series2 = new XYChart.Series<Integer, Integer>();
+		series1.getData().add(new XYChart.Data<>(5, 100));
+		series1.getData().add(new XYChart.Data<>(10, 10));
+		series1.getData().add(new XYChart.Data<>(15, 200));
+		series1.getData().add(new XYChart.Data<>(20, 50));
+		series1.getData().add(new XYChart.Data<>(25, 220));
+		series1.getData().add(new XYChart.Data<>(30, 100));
+		series1.getData().add(new XYChart.Data<>(35, 10));
+		
+		linechart.getData().add(series1);
+		
+		
+		
+		
+		
+	}*/
+	
+	
+	
+	
 	
 }
