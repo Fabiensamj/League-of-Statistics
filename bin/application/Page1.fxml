@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Polygon?>
+
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PageAcceuilController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button id="BtnChargerPartie" layoutY="-3.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="231.0" text="Charger Partie" textOverrun="WORD_ELLIPSIS" />
+            <ListView id="Historique" layoutY="55.0" prefHeight="469.0" prefWidth="231.0" />
+            <Pane layoutY="72.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Akali.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+            <Pane layoutY="155.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Akali.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+            <Pane layoutY="239.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Akali.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+            <Pane layoutY="324.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Akali.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+            <Pane layoutY="413.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Akali.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="472.0" prefWidth="488.0">
+         <children>
+            <Button id="BtnDeconnecter" layoutX="396.0" mnemonicParsing="false" onAction="#PushDeconnexion" prefHeight="58.0" prefWidth="151.0" text="Déconnecter" />
+            <Label id="Titre" layoutX="14.0" layoutY="29.0" prefHeight="46.0" prefWidth="231.0" text="League of Statistics" />
+            <Label id="TextNomInvocateur" fx:id ="TextNomInvocateur" layoutX="14.0" layoutY="67.0" prefHeight="22.0" prefWidth="82.0" text="" />
+            <Label id="Classement" layoutX="352.0" layoutY="158.0" prefHeight="31.0" prefWidth="82.0" text="Classement" />
+            <ImageView id="ImgClassement" fitHeight="131.0" fitWidth="98.0" layoutX="336.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/Rank/Diamant.jpg" />
+               </image>
+            </ImageView>
+            <Label id="TextClassement" layoutX="365.0" layoutY="306.0" prefHeight="22.0" prefWidth="60.0" text="Diamant" />
+            <Label id="TitreMoyenneStats" layoutX="27.0" layoutY="165.0" prefHeight="22.0" prefWidth="122.0" text="Moyenne des stats" />
+            <Label id="NombreDor" layoutX="27.0" layoutY="194.0" prefHeight="22.0" prefWidth="98.0" text="Nombre d'or :" />
+            <Label id="SbiresTues" layoutX="27.0" layoutY="216.0" prefHeight="22.0" prefWidth="82.0" text="Sbires tués :" />
+            <Label id="DegatsInfliges" layoutX="27.0" layoutY="242.0" prefHeight="22.0" prefWidth="98.0" text="Dégâts infligés :" />
+            <Label id="SoinsProdigues" layoutX="27.0" layoutY="271.0" prefHeight="22.0" prefWidth="98.0" text="Soins Prodigués :" />
+            <Label id="TourellesDetruites" layoutX="27.0" layoutY="298.0" prefHeight="22.0" prefWidth="110.0" text="Tourelles détruites :" />
+            <Label id="NombreDeliminations" layoutX="27.0" layoutY="328.0" prefHeight="22.0" prefWidth="133.0" text="Nombre d'éliminations :" />
+            <Label id="NombreDeMorts" layoutX="27.0" layoutY="350.0" prefHeight="22.0" prefWidth="122.0" text="Nombre de morts :" />
+            <Label id="NombreDassistance" layoutX="27.0" layoutY="372.0" prefHeight="22.0" prefWidth="122.0" text="Nombre d'assistances :" />
+            <Label id="TextNombreDor" layoutX="111.0" layoutY="197.0" prefHeight="17.0" prefWidth="73.0" text="0" />
+            <Label id="TextSbiresTues" layoutX="102.0" layoutY="219.0" prefHeight="17.0" prefWidth="73.0" text="0" />
+            <Label id="TextDegatsInfliges" layoutX="125.0" layoutY="245.0" prefHeight="17.0" prefWidth="60.0" text="0" />
+            <Label id="TextSoinsProdigues" layoutX="125.0" layoutY="274.0" prefHeight="17.0" prefWidth="66.0" text="0" />
+            <Label id="TextTourellesDetruites" layoutX="134.0" layoutY="301.0" prefHeight="17.0" prefWidth="53.0" text="0" />
+            <Label id="TextNombreDeliminations" layoutX="161.0" layoutY="331.0" prefHeight="17.0" prefWidth="53.0" text="0" />
+            <Label id="TextNombreDeMorts" layoutX="134.0" layoutY="353.0" prefHeight="17.0" prefWidth="60.0" text="0" />
+            <Label id="TextNombreDassistance" layoutX="150.0" layoutY="375.0" prefHeight="17.0" prefWidth="60.0" text="0" />
+            <ImageView id="FondDiagram" fitHeight="112.0" fitWidth="122.0" layoutX="57.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/Graph.png" />
+               </image>
+            </ImageView>
+            <Polygon id="GraphDiagram" fill="#1fddff04" layoutX="102.0" layoutY="461.0" points="-21.0, 13.0, 7.0, 13.0, -7.0, -36.0" stroke="#ee0606" strokeType="INSIDE" strokeWidth="3.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

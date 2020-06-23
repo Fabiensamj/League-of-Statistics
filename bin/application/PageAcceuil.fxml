@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PageAcceuilController">
+   <left>
+      <Pane prefHeight="414.0" prefWidth="741.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea id="Nom" fx:id="Nom" layoutX="14.0" layoutY="150.0" prefHeight="32.0" prefWidth="192.0" />
+            <ImageView id="Logo" fitHeight="52.0" fitWidth="50.0" layoutX="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/Logo.png" />
+               </image>
+            </ImageView>
+            <ImageView id="SeConnecter" fitHeight="49.0" fitWidth="200.0" layoutX="14.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/SeConnecter.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="18.0" layoutY="376.0" text="League of statistics" />
+            <Button layoutX="14.0" layoutY="195.0" mnemonicParsing="false" onAction="#PushConnexion" text="Connexion" />
+            <ImageView fitHeight="414.0" fitWidth="547.0" layoutX="214.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/ArtWork.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
