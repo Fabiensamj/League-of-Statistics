@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Polygon?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PageAcceuilController">
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#TauxVictoire" prefHeight="521.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PageAcceuilController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -101,7 +102,7 @@
          <children>
             <Button id="BtnDeconnecter" layoutX="396.0" mnemonicParsing="false" onAction="#PushDeconnexion" prefHeight="58.0" prefWidth="151.0" text="Déconnecter" />
             <Label id="Titre" layoutX="14.0" layoutY="29.0" prefHeight="46.0" prefWidth="231.0" text="League of Statistics" />
-            <Label id="TextNomInvocateur" fx:id ="TextNomInvocateur" layoutX="14.0" layoutY="67.0" prefHeight="22.0" prefWidth="82.0" text="" />
+            <Label id="TextNomInvocateur" fx:id="TextNomInvocateur" layoutX="14.0" layoutY="67.0" prefHeight="22.0" prefWidth="82.0" text="" />
             <Label id="Classement" layoutX="352.0" layoutY="158.0" prefHeight="31.0" prefWidth="82.0" text="Classement" />
             <ImageView id="ImgClassement" fitHeight="131.0" fitWidth="98.0" layoutX="336.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -131,7 +132,8 @@
                   <Image url="@Img/Graph.png" />
                </image>
             </ImageView>
-            <Polygon id="GraphDiagram" fill="#1fddff04" layoutX="102.0" layoutY="461.0" points="-21.0, 13.0, 7.0, 13.0, -7.0, -36.0" stroke="#ee0606" strokeType="INSIDE" strokeWidth="3.0" />
+            <Polygon id="GraphDiagram" fx:id="GraphDiagram" fill="#1fddff04" layoutX="102.0" layoutY="461.0" points="0.0, 0.0, 0.0, 0.0, 0.0, 0.0" stroke="#ee0606" strokeType="INSIDE" strokeWidth="3.0" />
+            <PieChart fx:id="TauxVictoire" layoutX="285.0" layoutY="339.0" prefHeight="145.0" prefWidth="190.0" />
          </children></AnchorPane>
   </items>
 </SplitPane>
