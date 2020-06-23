@@ -31,6 +31,7 @@ public class PageAcceuilController {
 	@FXML
 	private PieChart TauxVictoire;
 	
+	@FXML
 	private Polygon GraphDiagram;
 
 	
@@ -40,7 +41,7 @@ public class PageAcceuilController {
 	@FXML
 	private TextArea Nom;
 	@FXML
-    private BarChart<String, Integer> barchart;
+    	private BarChart<String, Integer> barchart;
 	/* @FXML
     private LineChart<Integer,Integer> linechart;*/
 	
@@ -52,7 +53,7 @@ public class PageAcceuilController {
 			Scene home_s = new Scene(home_p);
 			Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 			app_stage.setScene(home_s);
-			//Bug parceque le graph pas initialiser ?, Initialiser toute les scene au début puis faire que des .show() ?
+			//Bug parceque le graph pas initialiser ?, Initialiser toute les scene au dÃ©but puis faire que des .show() ?
 			app_stage.show();
 			
 			
@@ -128,7 +129,7 @@ public class PageAcceuilController {
 
 		GraphDiagram.getPoints().clear();
 
-		if (degats <= 1000 && soin <=1000 && tanker <= 1000) {//Valeur a régler sur ceux des games
+		if (degats <= 1000 && soin <=1000 && tanker <= 1000) {//Valeur a rÃ©gler sur ceux des games
 			GraphDiagram.getPoints().addAll(new Double[] {
 				-12.0,5.0,//Heal
 				-1.0,3.0,//Tank
@@ -623,7 +624,7 @@ public class PageAcceuilController {
 		
 		GraphDiagram.getPoints().clear();
 		
-		if (degats <= 1000 && soin <=1000 && tanker <= 1000) {//Valeur a régler sur ceux des games
+		if (degats <= 1000 && soin <=1000 && tanker <= 1000) {//Valeur a rÃ©gler sur ceux des games
 			GraphDiagram.getPoints().addAll(new Double[] {
 				-12.0,5.0,//Heal
 				-1.0,3.0,//Tank
