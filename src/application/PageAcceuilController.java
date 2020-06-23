@@ -103,29 +103,7 @@ public class PageAcceuilController {
 		
 		
 	}
-	/*
-	@FXML
-	protected void PushAvantage(ActionEvent e)throws IOException {
-		
-		
-		linechart.getData().clear();
-		XYChart.Series series1 = new XYChart.Series();
-		//Series<Integer, Integer> series2 = new XYChart.Series<Integer, Integer>();
-		series1.getData().add(new XYChart.Data<>(5, 100));
-		series1.getData().add(new XYChart.Data<>(10, 10));
-		series1.getData().add(new XYChart.Data<>(15, 200));
-		series1.getData().add(new XYChart.Data<>(20, 50));
-		series1.getData().add(new XYChart.Data<>(25, 220));
-		series1.getData().add(new XYChart.Data<>(30, 100));
-		series1.getData().add(new XYChart.Data<>(35, 10));
-		
-		linechart.getData().add(series1);
-		
-		
-		
-		
-		
-	}*/
+	
 	
 	
 	
