@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PageAcceuilController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button id="BtnChargerPartie" layoutY="-3.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="231.0" text="Charger Partie" textOverrun="WORD_ELLIPSIS" />
+            <ListView id="Historique" layoutY="55.0" prefHeight="469.0" prefWidth="231.0" />
+            <Pane layoutY="71.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Akali.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+            <Pane layoutY="164.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Camille.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+            <Pane layoutY="253.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Garen.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+            <Pane layoutY="342.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Graves.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+            <Pane layoutY="431.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+               <children>
+                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Img/champion/Kassadin.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="43.0" text="/" />
+                  <Label layoutX="40.0" layoutY="43.0" text="/" />
+                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
+                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+               </children>
+            </Pane>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="472.0" prefWidth="488.0">
+         <children>
+            <Button id="BtnDeconnecter" layoutX="396.0" mnemonicParsing="false" onAction="#PushDeconnexion" prefHeight="58.0" prefWidth="151.0" text="Déconnecter" />
+            <Label id="Titre" layoutX="14.0" layoutY="29.0" prefHeight="46.0" prefWidth="231.0" text="League of Statistics" />
+            <Label id="TextNomInvocateur" layoutX="14.0" layoutY="67.0" prefHeight="22.0" prefWidth="82.0" text="Gilcookie" />
+            <TabPane layoutX="14.0" layoutY="129.0" prefHeight="389.0" prefWidth="534.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab id="Resume" text="Résumé">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f28" height="52.0" layoutX="282.0" layoutY="272.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f28" height="52.0" layoutX="282.0" layoutY="212.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f28" height="52.0" layoutX="282.0" layoutY="154.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f28" height="52.0" layoutX="282.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f28" height="52.0" layoutX="282.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="14.0" layoutY="272.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="14.0" layoutY="212.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="14.0" layoutY="154.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="14.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="14.0" layoutY="40.0" stroke="BLACK" strokeType="INSIDE" width="231.0" />
+                              <ImageView id="ImgE1C1" fitHeight="46.0" fitWidth="47.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="ImgE1C2" fitHeight="46.0" fitWidth="47.0" layoutX="14.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="ImgE1C3" fitHeight="46.0" fitWidth="47.0" layoutX="14.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="ImgE1C4" fitHeight="46.0" fitWidth="47.0" layoutX="14.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="ImgE1C5" fitHeight="46.0" fitWidth="47.0" layoutX="14.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="113.0" layoutY="9.0" prefHeight="34.0" prefWidth="51.0" text="Victoire" />
+                              <Label layoutX="371.0" layoutY="18.0" text="Défaite" />
+                              <ImageView id="ImgE2C1" fitHeight="46.0" fitWidth="47.0" layoutX="458.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="ImgE2C2" fitHeight="46.0" fitWidth="47.0" layoutX="458.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="ImgE2C3" fitHeight="46.0" fitWidth="47.0" layoutX="458.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="ImgE2C4" fitHeight="46.0" fitWidth="47.0" layoutX="458.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="ImgE2C5" fitHeight="46.0" fitWidth="47.0" layoutX="458.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label id="KillE1C1" layoutX="70.0" layoutY="58.0" text="0" />
+                              <Label layoutX="85.0" layoutY="58.0" text="/" />
+                              <Label id="DeathE1C1" layoutX="99.0" layoutY="58.0" text="0" />
+                              <Label layoutX="116.0" layoutY="58.0" text="/" />
+                              <Label id="AssistE1C1" layoutX="130.0" layoutY="58.0" text="0" />
+                              <Label id="NomE1C1" layoutX="164.0" layoutY="58.0" prefHeight="17.0" prefWidth="68.0" text="Faker" />
+                              <Label id="NomE1C2" layoutX="164.0" layoutY="114.0" prefHeight="17.0" prefWidth="64.0" text="Faker" />
+                              <Label id="NomE1C3" layoutX="164.0" layoutY="172.0" prefHeight="17.0" prefWidth="53.0" text="Faker" />
+                              <Label id="NomE1C4" layoutX="164.0" layoutY="230.0" prefHeight="17.0" prefWidth="48.0" text="Faker" />
+                              <Label id="NomE1C5" layoutX="164.0" layoutY="290.0" prefHeight="17.0" prefWidth="50.0" text="Faker" />
+                              <Label id="NomE2C1" layoutX="290.0" layoutY="58.0" prefHeight="17.0" prefWidth="59.0" text="Faker" />
+                              <Label id="NomE2C2" layoutX="290.0" layoutY="114.0" prefHeight="17.0" prefWidth="51.0" text="Faker" />
+                              <Label id="NomE2C3" layoutX="290.0" layoutY="172.0" prefHeight="17.0" prefWidth="46.0" text="Faker" />
+                              <Label id="NomE2C4" layoutX="290.0" layoutY="230.0" prefHeight="17.0" prefWidth="45.0" text="Faker" />
+                              <Label id="NomE2C5" layoutX="290.0" layoutY="290.0" prefHeight="17.0" prefWidth="40.0" text="Faker" />
+                              <Label layoutX="83.0" layoutY="114.0" text="/" />
+                              <Label layoutX="116.0" layoutY="114.0" text="/" />
+                              <Label layoutX="83.0" layoutY="172.0" text="/" />
+                              <Label layoutX="116.0" layoutY="172.0" text="/" />
+                              <Label layoutX="83.0" layoutY="230.0" text="/" />
+                              <Label layoutX="116.0" layoutY="230.0" text="/" />
+                              <Label layoutX="83.0" layoutY="290.0" text="/" />
+                              <Label layoutX="116.0" layoutY="290.0" text="/" />
+                              <Label layoutX="369.0" layoutY="58.0" text="/" />
+                              <Label layoutX="407.0" layoutY="58.0" text="/" />
+                              <Label layoutX="369.0" layoutY="114.0" text="/" />
+                              <Label layoutX="407.0" layoutY="114.0" text="/" />
+                              <Label layoutX="369.0" layoutY="172.0" text="/" />
+                              <Label layoutX="407.0" layoutY="172.0" text="/" />
+                              <Label layoutX="369.0" layoutY="230.0" text="/" />
+                              <Label layoutX="407.0" layoutY="230.0" text="/" />
+                              <Label layoutX="369.0" layoutY="290.0" text="/" />
+                              <Label layoutX="407.0" layoutY="290.0" text="/" />
+                              <Label id="KillE1C2" layoutX="70.0" layoutY="114.0" text="0" />
+                              <Label id="KillE1C3" layoutX="70.0" layoutY="172.0" text="0" />
+                              <Label id="KillE1C4" layoutX="70.0" layoutY="230.0" text="0" />
+                              <Label id="KillE1C5" layoutX="70.0" layoutY="290.0" text="0" />
+                              <Label id="DeathE1C2" layoutX="99.0" layoutY="114.0" text="0" />
+                              <Label id="DeathE1C3" layoutX="99.0" layoutY="172.0" text="0" />
+                              <Label id="DeathE1C4" layoutX="99.0" layoutY="230.0" text="0" />
+                              <Label id="DeathE1C5" layoutX="99.0" layoutY="290.0" text="0" />
+                              <Label id="AssistE1C2" layoutX="130.0" layoutY="114.0" text="0" />
+                              <Label id="AssistE1C3" layoutX="130.0" layoutY="172.0" text="0" />
+                              <Label id="AssistE1C4" layoutX="130.0" layoutY="230.0" text="0" />
+                              <Label id="AssistE1C5" layoutX="130.0" layoutY="290.0" text="0" />
+                              <Label id="KillE2C1" layoutX="356.0" layoutY="58.0" text="0" />
+                              <Label id="KillE2C2" layoutX="356.0" layoutY="114.0" text="0" />
+                              <Label id="KillE2C3" layoutX="356.0" layoutY="172.0" text="0" />
+                              <Label id="KillE2C4" layoutX="356.0" layoutY="230.0" text="0" />
+                              <Label id="KillE2C5" layoutX="356.0" layoutY="290.0" text="0" />
+                              <Label id="DeathE2C1" layoutX="387.0" layoutY="58.0" text="0" />
+                              <Label id="DeathE2C2" layoutX="387.0" layoutY="114.0" text="0" />
+                              <Label id="DeathE2C3" layoutX="387.0" layoutY="172.0" text="0" />
+                              <Label id="DeathE2C4" layoutX="387.0" layoutY="230.0" text="0" />
+                              <Label id="DeathE2C5" layoutX="387.0" layoutY="290.0" text="0" />
+                              <Label id="AssistE2C1" layoutX="423.0" layoutY="58.0" text="0" />
+                              <Label id="AssistE2C2" layoutX="423.0" layoutY="114.0" text="0" />
+                              <Label id="AssistE2C3" layoutX="423.0" layoutY="172.0" text="0" />
+                              <Label id="AssistE2C4" layoutX="423.0" layoutY="230.0" text="0" />
+                              <Label id="AssistE2C5" layoutX="423.0" layoutY="290.0" text="0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab id="Details" text="Détails">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ImageView id="DetailsLogo" fitHeight="58.0" fitWidth="62.0" layoutX="38.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/champion/Camille.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="DetailsItem" fitHeight="32.0" fitWidth="200.0" layoutX="121.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/Items/ItemsSet1.png" />
+                                 </image>
+                              </ImageView>
+                              <Label id="DetailsNom" layoutX="121.0" layoutY="21.0" prefHeight="22.0" prefWidth="90.0" text="Gilcookie" />
+                              <Label id="DetailsSbires" layoutX="331.0" layoutY="56.0" text="0" />
+                              <Label layoutX="355.0" layoutY="56.0" prefHeight="17.0" prefWidth="70.0" text="sbires tués" />
+                              <ImageView id="DetailsRunes" fitHeight="205.0" fitWidth="400.0" layoutX="38.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Img/Runes/RunesSet1.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="238.0" layoutY="24.0" text="/" />
+                              <Label layoutX="262.0" layoutY="24.0" text="/" />
+                              <Label id="DetailsKill" layoutX="218.0" layoutY="24.0" text="0" />
+                              <Label id="DetailsDeath" layoutX="249.0" layoutY="24.0" text="0" />
+                              <Label id="DetailsAssist" layoutX="275.0" layoutY="24.0" text="0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab id="Graphiques" text="Graphiques">
+                     <content>
+                        <AnchorPane fx:id="grapheArea" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HBox fx:id="grapheArea" layoutX="-3.0" prefHeight="360.0" prefWidth="534.0">
+                                 <children>
+                                    <VBox prefHeight="335.0" prefWidth="255.0" spacing="10.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="143.0" text="Nombre d'or" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="141.0" text="Sbires tués" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="141.0" text="Dégâts infligés">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="139.0" text="Soins Prodigués" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="141.0" text="Tourelles détruites" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="145.0" text="Nombres d'élimination" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="145.0" text="Nombres de morts" />
+                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="145.0" text="Nombres d'assistance" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="25.0" />
+                                       </HBox.margin>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <BarChart fx:id="barchart" animated="false" horizontalGridLinesVisible="false" legendVisible="false" rotate="90.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                      <xAxis>
+                                        <CategoryAxis layoutX="90.0" layoutY="-90.0" prefWidth="334.0" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis animated="false" autoRanging="false" minorTickVisible="false" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab id="Graphiques" closable="false" text="Avantage">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <LineChart fx:id="linechart" animated="false" layoutX="25.0" layoutY="14.0" prefHeight="307.0" prefWidth="485.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
