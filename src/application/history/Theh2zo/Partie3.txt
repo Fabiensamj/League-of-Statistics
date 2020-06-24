@@ -1,0 +1,152 @@
+Partie de : Theh2zo
+Date : 03/06/2020
+Champion jouÃ© : Pyke
+RÃ©sultat : DÃ©faite
+DurÃ©e de la partie : 26:59
+
+-----
+
+RÃ©sumÃ© de la partie : 
+Equipe 1 :
+
+Toplaner : 
+	Champion              : Nasus
+	Pseudonyme            : Caplamme
+	Total Or              : 10775
+	Sbires tuÃ©s           : 172
+	Soins prodiguÃ©s       : 2120
+	Tourelles dÃ©truites   : 0
+	Nombre d'Ã©liminations : 7
+	Nombre de morts       : 4 
+	Nombre d'assistances  : 3
+	Equipement            : 1
+Jungler  : 
+	Champion              : Graves
+	Pseudonyme            : Nullos
+	Total Or              : 9050
+	Sbires tuÃ©s           : 150
+	Soins prodiguÃ©s       : 4293
+	Tourelles dÃ©truites   : 0
+	Nombre d'Ã©liminations : 4
+	Nombre de morts       : 9
+	Nombre d'assistances  : 3
+	Equipement            : 1
+Midlaner : 
+	Champion              : Pyke
+	Pseudonyme            : Theh2zo
+	Total Or              : 12842
+	Sbires tuÃ©s           : 298
+	Soins prodiguÃ©s       : 1007
+	Tourelles dÃ©truites   : 7
+	Nombre d'Ã©liminations : 17
+	Nombre de morts       : 3
+	Nombre d'assistances  : 5
+	Equipement            : 3
+Adc      : 
+	Champion              : Jhin
+	Pseudonyme            : Aird
+	Total Or              : 7752
+	Sbires tuÃ©s           : 140
+	Soins prodiguÃ©s       : 3217
+	Tourelles dÃ©truites   : 1
+	Nombre d'Ã©liminations : 0
+	Nombre de morts       : 3
+	Nombre d'assistances  : 6
+	Equipement            : 4
+Support  : 
+	Champion              : Veigar
+	Pseudonyme            : Mcdo
+	Total Or              : 6400
+	Sbires tuÃ©s           : 31
+	Soins prodiguÃ©s       : 500
+	Tourelles dÃ©truites   : 0
+	Nombre d'Ã©liminations : 1
+	Nombre de morts       : 7
+	Nombre d'assistances  : 2
+	Equipement            : 5
+
+
+Equipe 2 :
+
+Toplaner : 
+	Champion              : Wukong
+	Pseudonyme            : Gehen
+	Total Or              : 11905
+	Sbires tuÃ©s           : 184
+	Soins prodiguÃ©s       : 4000
+	Tourelles dÃ©truites   : 3
+	Nombre d'Ã©liminations : 8
+	Nombre de morts       : 5
+	Nombre d'assistances  : 4
+	Equipement            : 3
+Jungler  : 
+	Champion              : Hecarim
+	Pseudonyme            : Lodxe
+	Total Or              : 11200
+	Sbires tuÃ©s           : 161
+	Soins prodiguÃ©s       : 16500
+	Tourelles dÃ©truites   : 2
+	Nombre d'Ã©liminations : 6
+	Nombre de morts       : 2
+	Nombre d'assistances  : 8
+	Equipement            : 1
+Midlaner : 
+	Champion              : Leblanc
+	Pseudonyme            : PDF
+	Total Or              : 12804
+	Sbires tuÃ©s           : 165
+	Soins prodiguÃ©s       : 6160
+	Tourelles dÃ©truites   : 1
+	Nombre d'Ã©liminations : 13
+	Nombre de morts       : 1
+	Nombre d'assistances  : 5
+	Equipement            : 2
+Adc      :
+	Champion              : Caitlyn
+	Pseudonyme            : Rails
+	Total Or              : 11002
+	Sbires tuÃ©s           : 162
+	Soins prodiguÃ©s       : 3634
+	Tourelles dÃ©truites   : 4
+	Nombre d'Ã©liminations : 6
+	Nombre de morts       : 2
+	Nombre d'assistances  : 8
+	Equipement            : 4
+Support  : 
+	Champion              : Malphite
+	Pseudonyme            : Pigkeke
+	Total Or              : 7200
+	Sbires tuÃ©s           : 32
+	Soins prodiguÃ©s       : 1564
+	Tourelles dÃ©truites   : 0
+	Nombre d'Ã©liminations : 1
+	Nombre de morts       : 3
+	Nombre d'assistances  : 9
+	Equipement            : 5
+
+-----
+
+DÃ©tails du joueur :
+	/*
+	
+	Champion   : trouvable avec ligne 3
+	Kda        : On fait le lien avec le pseudo et on l'affiche avec des /
+	Pseudonyme : trouvable avec ligne 1
+	
+	*/
+	
+	// Sbires tuÃ©s : Trouvable au dessus Ã©galement
+	
+	Rune principale : Aery
+		Runes secondaires : Ruban de mana / Transcendence / Brulure
+		Runes terciaires : flash hextech / Savoir cosmique
+
+-----
+
+Avantage en or :
+	Avantage Total : 0 / -1110 / -3070 / -7185 / -5484 / -11378 / -11039
+//Positif = Equipe 1 - NÃ©gatif = Ã©quipe 2
+// Etant donnÃ© que nous le voulons totues les 5 minutes on ne peut pas calculer depuis les infos prÃ©cedentes
+	
+	
+	

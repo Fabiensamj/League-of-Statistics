@@ -127,13 +127,13 @@ Support  :
 -----
 
 Détails du joueur :
-	/*
 	
-	Champion   : trouvable avec ligne 3
-	Kda        : On fait le lien avec le pseudo et on l'affiche avec des /
-	Pseudonyme : trouvable avec ligne 1
 	
-	*/
+	//Champion   : trouvable avec ligne 3
+	//Kda        : On fait le lien avec le pseudo et on l'affiche avec des /
+	//Pseudonyme : trouvable avec ligne 1
+	
+	
 	
 	// Sbires tués : Trouvable au dessus également
 	
