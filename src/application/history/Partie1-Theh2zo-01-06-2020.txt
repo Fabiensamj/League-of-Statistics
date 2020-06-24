@@ -138,8 +138,6 @@ Détails du joueur :
 	// Sbires tués : Trouvable au dessus également
 	
 	Rune principale : Déluge de lames
-		Runes secondaires : Coup bas / Arracheur d'oeil / Chasseur vorace
-		Runes terciaires : Coup de grâce / Légende : Ténacité
 
 -----
 

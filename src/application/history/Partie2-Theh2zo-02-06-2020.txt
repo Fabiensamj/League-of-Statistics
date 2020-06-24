@@ -127,19 +127,17 @@ Support  :
 -----
 
 Détails du joueur :
-	/*
 	
-	Champion   : trouvable avec ligne 3
-	Kda        : On fait le lien avec le pseudo et on l'affiche avec des /
-	Pseudonyme : trouvable avec ligne 1
+	
+	//le champion   : trouvable avec ligne 3
+	//Kda        : On fait le lien avec le pseudo et on l'affiche avec des /
+	//Pseudonyme : trouvable avec ligne 1
 	
 	*/
 	
 	// Sbires tués : Trouvable au dessus également
 	
 	Rune principale : Aery
-		Runes secondaires : Ruban de mana / Transcendence / Brulure
-		Runes terciaires : flash hextech / Savoir cosmique
 
 -----
 

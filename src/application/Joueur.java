@@ -2,7 +2,7 @@ package application;
 
 public class Joueur {
 	
-	int id, totalOr, sbire, soins, tourelles, eliminations, morts, assistances, equipement;
+	int id, totalOr, sbires, soins, tourelles, eliminations, morts, assistances, equipement;
 	String pseudo, champion, kda;
 	
 	public Joueur(int id)
@@ -26,12 +26,12 @@ public class Joueur {
 		this.totalOr = totalOr;
 	}
 
-	public int getSbire() {
-		return sbire;
+	public int getSbires() {
+		return sbires;
 	}
 
-	public void setSbire(int sbire) {
-		this.sbire = sbire;
+	public void setSbires(int sbires) {
+		this.sbires = sbires;
 	}
 
 	public int getSoins() {
@@ -106,6 +106,13 @@ public class Joueur {
 		
 		this.kda = ""+this.getEliminations()+"/"+this.getAssistances()+"/"+this.getMorts();
 		
+	}
+
+	@Override
+	public String toString() {
+		return "Joueur [id=" + id + ", totalOr=" + totalOr + ", sbires=" + sbires + ", soins=" + soins + ", tourelles="
+				+ tourelles + ", eliminations=" + eliminations + ", morts=" + morts + ", assistances=" + assistances
+				+ ", equipement=" + equipement + ", pseudo=" + pseudo + ", champion=" + champion + ", kda=" + kda + "]";
 	}
 
 }
