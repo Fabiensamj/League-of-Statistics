@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
@@ -41,9 +42,9 @@ public class PageAcceuilController {
 	@FXML
 	private TextArea Nom;
 	@FXML
-    	private BarChart<String, Integer> barchart;
-	/* @FXML
-    private LineChart<Integer,Integer> linechart;*/
+    private BarChart<String, Integer> barchart;
+	 @FXML
+    private LineChart<Integer,Integer> linechart;
 	
 	
 	
@@ -86,6 +87,10 @@ public class PageAcceuilController {
 		chapardage = 1;
 	}
 
+	
+	/*
+	 * Graphes en barre de la section graphique
+	 */
 	@FXML
 	protected void PushGraphe(ActionEvent e)throws IOException {
 		
@@ -106,11 +111,36 @@ public class PageAcceuilController {
 		barchart.getXAxis().setTickLabelRotation(-90);
 		barchart.getYAxis().setTickLabelsVisible(false);
 	    barchart.getYAxis().setOpacity(0);
-		
-		
-		
-		
 	}
+	/*
+	 * Graphe en courbe de la partie avantage
+	 */
+	@FXML
+    void pushAvantage(ActionEvent event) {
+		linechart.getData().clear();
+		//defining a series
+        XYChart.Series series = new XYChart.Series();
+        series.setName("Avantage or");
+        //populating the series with data
+        series.getData().add(new XYChart.Data("1", 23));
+        series.getData().add(new XYChart.Data("2", 14));
+        series.getData().add(new XYChart.Data("3", 15));
+        series.getData().add(new XYChart.Data("4", -24));
+        series.getData().add(new XYChart.Data("5", 34));
+        series.getData().add(new XYChart.Data("6", 36));
+        series.getData().add(new XYChart.Data("7", 22));
+        series.getData().add(new XYChart.Data("8", 45));
+        series.getData().add(new XYChart.Data("9", -43));
+        series.getData().add(new XYChart.Data("10", 17));
+        series.getData().add(new XYChart.Data("11", 29));
+        series.getData().add(new XYChart.Data("12", 25));
+        
+        linechart.getData().add(series);
+        
+    }
+	
+	
+	
 	@FXML
 	protected void TauxVictoire(MouseEvent e) {
 		if (chapardage ==1) {
