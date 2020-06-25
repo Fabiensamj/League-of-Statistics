@@ -30,7 +30,9 @@ public class PageAcceuilController {
 	
 	private int chapardage = 1;
 	
-	private Lecteur lecteur = new Lecteur("Theh2zo");
+	private Lecteur lecteur = new Lecteur("");
+	
+	static public Utilisateur user = new Utilisateur();
 
 	@FXML
 	private PieChart TauxVictoire;
@@ -53,6 +55,7 @@ public class PageAcceuilController {
 	
 	@FXML
 	protected void PushConnexion(ActionEvent e) throws IOException {
+			user.setPseudo(Nom.getText());
 			Parent home_p = FXMLLoader.load(getClass().getResource("Page1.fxml"));
 			Scene home_s = new Scene(home_p);
 			Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -251,504 +254,507 @@ public class PageAcceuilController {
 	@FXML
 	protected void TauxVictoire(MouseEvent e) {
 		if (chapardage ==1) {
-		double Victoire = 75;
-		double Defaite = (100-Victoire);
-		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList( 
-				   new PieChart.Data("Victoire", Victoire), 
-				   new PieChart.Data("Defaite", Defaite));		   
-		TauxVictoire.setData(pieChartData);
-		chapardage =0;
-		/////////////////////////////////////////////////////////////////////////////////////
-
-		int degats = 2500;
-		int soin = 4800;
-		int tanker = 100;
-
-		GraphDiagram.getPoints().clear();
-
-		if (degats <= 1000 && soin <=1000 && tanker <= 1000) {//Valeur a régler sur ceux des games
-			GraphDiagram.getPoints().addAll(new Double[] {
-				-12.0,5.0,//Heal
-				-1.0,3.0,//Tank
-				-7.0,-10.0,//DPS
-			});
-		}
-		else if (degats>1000 && degats <= 2000 && soin <=1000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
+			
+			TextNomInvocateur.setText(user.getPseudo());
+			/////////////////////////////////////////////////////////////////////////////////////
+			double Victoire = 75;
+			double Defaite = (100-Victoire);
+			ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList( 
+					   new PieChart.Data("Victoire", Victoire), 
+					   new PieChart.Data("Defaite", Defaite));		   
+			TauxVictoire.setData(pieChartData);
+			chapardage =0;
+			/////////////////////////////////////////////////////////////////////////////////////
+	
+			int degats = 2500;
+			int soin = 4800;
+			int tanker = 100;
+	
+			GraphDiagram.getPoints().clear();
+	
+			if (degats <= 1000 && soin <=1000 && tanker <= 1000) {//Valeur a régler sur ceux des games
+				GraphDiagram.getPoints().addAll(new Double[] {
 					-12.0,5.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin <=1000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin <=1000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-		else if (degats <= 1000 && soin > 1000 && soin<=2000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
 					-1.0,3.0,//Tank
 					-7.0,-10.0,//DPS
 				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin > 1000 && soin<=2000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin > 1000 && soin<=2000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin > 1000 && soin<=2000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-
-		else if (degats <= 1000 && soin > 2000 && soin<=4000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin > 2000 && soin<=4000  && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin > 2000 && soin<=4000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin > 2000 && soin<=4000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-
-		else if (degats <= 1000 &&  soin>4000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin>4000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin>4000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin>4000 && tanker <= 1000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					-1.0,3.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-		////
-		else if (degats <= 1000 && soin <=1000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin <=1000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin <=1000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin <=1000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-		else if (degats <= 1000 && soin > 1000 && soin<=2000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin > 1000 && soin<=2000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin > 1000 && soin<=2000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin > 1000 && soin<=2000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-
-		else if (degats <= 1000 && soin > 2000 && soin<=4000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin > 2000 && soin<=4000  && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin > 2000 && soin<=4000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin > 2000 && soin<=4000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-
-		else if (degats <= 1000 &&  soin>4000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin>4000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin>4000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin>4000 && tanker > 1000 && tanker <= 2000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					5.0,10.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-		////
-		else if (degats <= 1000 && soin <=1000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin <=1000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin <=1000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin <=1000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-		else if (degats <= 1000 && soin > 1000 && soin<=2000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin > 1000 && soin<=2000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin > 1000 && soin<=2000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin > 1000 && soin<=2000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-
-		else if (degats <= 1000 && soin > 2000 && soin<=4000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin > 2000 && soin<=4000  && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin > 2000 && soin<=4000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin > 2000 && soin<=4000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-
-		else if (degats <= 1000 &&  soin>4000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin>4000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin>4000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin>4000 && tanker > 2000 && tanker <= 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					9.0,17.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-		////
-		else if (degats <= 1000 && soin <=1000 && tanker > 4000 ) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin <=1000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin <=1000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin <=1000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-12.0,5.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-		else if (degats <= 1000 && soin > 1000 && soin<=2000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin > 1000 && soin<=2000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin > 1000 && soin<=2000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin > 1000 && soin<=2000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-17.0,12.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-
-		else if (degats <= 1000 && soin > 2000 && soin<=4000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin > 2000 && soin<=4000  && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin > 2000 && soin<=4000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin > 2000 && soin<=4000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-22.0,17.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
-
-
-
-		else if (degats <= 1000 &&  soin>4000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-10.0,//DPS
-				});
-		}
-		else if (degats>1000 && degats <= 2000 && soin>4000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-18.0,//DPS
-				});
-		}
-		else if (degats >2000 && degats <= 4000 && soin>4000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-28.0,//DPS
-				});
-		}
-		else if (degats >4000 && soin>4000 && tanker > 4000) {
-			GraphDiagram.getPoints().addAll(new Double[] {
-					-27.0,25.0,//Heal
-					13.0,23.0,//Tank
-					-7.0,-38.0,//DPS
-				});
-		}
+			}
+			else if (degats>1000 && degats <= 2000 && soin <=1000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin <=1000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin <=1000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+			else if (degats <= 1000 && soin > 1000 && soin<=2000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin > 1000 && soin<=2000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin > 1000 && soin<=2000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin > 1000 && soin<=2000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+	
+			else if (degats <= 1000 && soin > 2000 && soin<=4000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin > 2000 && soin<=4000  && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin > 2000 && soin<=4000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin > 2000 && soin<=4000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+	
+			else if (degats <= 1000 &&  soin>4000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin>4000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin>4000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin>4000 && tanker <= 1000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						-1.0,3.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+			////
+			else if (degats <= 1000 && soin <=1000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin <=1000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin <=1000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin <=1000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+			else if (degats <= 1000 && soin > 1000 && soin<=2000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin > 1000 && soin<=2000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin > 1000 && soin<=2000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin > 1000 && soin<=2000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+	
+			else if (degats <= 1000 && soin > 2000 && soin<=4000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin > 2000 && soin<=4000  && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin > 2000 && soin<=4000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin > 2000 && soin<=4000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+	
+			else if (degats <= 1000 &&  soin>4000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin>4000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin>4000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin>4000 && tanker > 1000 && tanker <= 2000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						5.0,10.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+			////
+			else if (degats <= 1000 && soin <=1000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin <=1000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin <=1000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin <=1000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+			else if (degats <= 1000 && soin > 1000 && soin<=2000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin > 1000 && soin<=2000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin > 1000 && soin<=2000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin > 1000 && soin<=2000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+	
+			else if (degats <= 1000 && soin > 2000 && soin<=4000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin > 2000 && soin<=4000  && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin > 2000 && soin<=4000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin > 2000 && soin<=4000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+	
+			else if (degats <= 1000 &&  soin>4000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin>4000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin>4000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin>4000 && tanker > 2000 && tanker <= 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						9.0,17.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+			////
+			else if (degats <= 1000 && soin <=1000 && tanker > 4000 ) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin <=1000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin <=1000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin <=1000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-12.0,5.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+			else if (degats <= 1000 && soin > 1000 && soin<=2000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin > 1000 && soin<=2000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin > 1000 && soin<=2000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin > 1000 && soin<=2000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-17.0,12.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+	
+			else if (degats <= 1000 && soin > 2000 && soin<=4000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin > 2000 && soin<=4000  && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin > 2000 && soin<=4000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin > 2000 && soin<=4000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-22.0,17.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
+	
+	
+	
+			else if (degats <= 1000 &&  soin>4000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-10.0,//DPS
+					});
+			}
+			else if (degats>1000 && degats <= 2000 && soin>4000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-18.0,//DPS
+					});
+			}
+			else if (degats >2000 && degats <= 4000 && soin>4000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-28.0,//DPS
+					});
+			}
+			else if (degats >4000 && soin>4000 && tanker > 4000) {
+				GraphDiagram.getPoints().addAll(new Double[] {
+						-27.0,25.0,//Heal
+						13.0,23.0,//Tank
+						-7.0,-38.0,//DPS
+					});
+			}
 		}
 		else {}
 	}

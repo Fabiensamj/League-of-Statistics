@@ -18,6 +18,10 @@ public class Utilisateur {
 		this.pseudo = pseudo;
 	}
 
+	public Utilisateur()
+	{
+		
+	}
 
 	public String getPseudo() {
 		return pseudo;
