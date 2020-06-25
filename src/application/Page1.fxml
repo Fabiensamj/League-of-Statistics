@@ -109,7 +109,7 @@
                   <Image url="@Img/Rank/Diamant.jpg" />
                </image>
             </ImageView>
-            <Label id="TextClassement" layoutX="365.0" layoutY="306.0" prefHeight="22.0" prefWidth="60.0" text="Diamant" />
+            <Label id="TextClassement" fx:id="TextClassement" layoutX="365.0" layoutY="306.0" prefHeight="22.0" prefWidth="60.0" text="Diamant" />
             <Label id="TitreMoyenneStats" layoutX="27.0" layoutY="165.0" prefHeight="22.0" prefWidth="122.0" text="Moyenne des stats" />
             <Label id="NombreDor" layoutX="27.0" layoutY="194.0" prefHeight="22.0" prefWidth="98.0" text="Nombre d'or :" />
             <Label id="SbiresTues" layoutX="27.0" layoutY="216.0" prefHeight="22.0" prefWidth="82.0" text="Sbires tués :" />
@@ -119,14 +119,14 @@
             <Label id="NombreDeliminations" layoutX="27.0" layoutY="328.0" prefHeight="22.0" prefWidth="133.0" text="Nombre d'éliminations :" />
             <Label id="NombreDeMorts" layoutX="27.0" layoutY="350.0" prefHeight="22.0" prefWidth="122.0" text="Nombre de morts :" />
             <Label id="NombreDassistance" layoutX="27.0" layoutY="372.0" prefHeight="22.0" prefWidth="122.0" text="Nombre d'assistances :" />
-            <Label id="TextNombreDor" layoutX="111.0" layoutY="197.0" prefHeight="17.0" prefWidth="73.0" text="0" />
-            <Label id="TextSbiresTues" layoutX="102.0" layoutY="219.0" prefHeight="17.0" prefWidth="73.0" text="0" />
-            <Label id="TextDegatsInfliges" layoutX="125.0" layoutY="245.0" prefHeight="17.0" prefWidth="60.0" text="0" />
-            <Label id="TextSoinsProdigues" layoutX="125.0" layoutY="274.0" prefHeight="17.0" prefWidth="66.0" text="0" />
-            <Label id="TextTourellesDetruites" layoutX="134.0" layoutY="301.0" prefHeight="17.0" prefWidth="53.0" text="0" />
-            <Label id="TextNombreDeliminations" layoutX="161.0" layoutY="331.0" prefHeight="17.0" prefWidth="53.0" text="0" />
-            <Label id="TextNombreDeMorts" layoutX="134.0" layoutY="353.0" prefHeight="17.0" prefWidth="60.0" text="0" />
-            <Label id="TextNombreDassistance" layoutX="150.0" layoutY="375.0" prefHeight="17.0" prefWidth="60.0" text="0" />
+            <Label id="TextNombreDor" fx:id="TextNombreDor" layoutX="111.0" layoutY="197.0" prefHeight="17.0" prefWidth="73.0" text="0" />
+            <Label id="TextSbiresTues" fx:id="TextSbiresTues" layoutX="102.0" layoutY="219.0" prefHeight="17.0" prefWidth="73.0" text="0" />
+            <Label id="TextDegatsInfliges" fx:id="TextDegatsInfliges" layoutX="125.0" layoutY="245.0" prefHeight="17.0" prefWidth="60.0" text="0" />
+            <Label id="TextSoinsProdigues" fx:id="TextSoinsProdigues" layoutX="125.0" layoutY="274.0" prefHeight="17.0" prefWidth="66.0" text="0" />
+            <Label id="TextTourellesDetruites" fx:id="TextTourellesDetruites" layoutX="134.0" layoutY="301.0" prefHeight="17.0" prefWidth="53.0" text="0" />
+            <Label id="TextNombreDeliminations" fx:id="TextNombreDeliminations" layoutX="161.0" layoutY="331.0" prefHeight="17.0" prefWidth="53.0" text="0" />
+            <Label id="TextNombreDeMorts" fx:id="TextNombreDeMorts" layoutX="134.0" layoutY="353.0" prefHeight="17.0" prefWidth="60.0" text="0" />
+            <Label id="TextNombreDassistance" fx:id="TextNombreDassistance" layoutX="150.0" layoutY="375.0" prefHeight="17.0" prefWidth="60.0" text="0" />
             <ImageView id="FondDiagram" fitHeight="112.0" fitWidth="122.0" layoutX="57.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Img/Graph.png" />

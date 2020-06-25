@@ -177,6 +177,10 @@ public class Lecteur {
 	public Joueur[][] getTabJoueur(){
 		return this.tabJoueur;
 	}
+	
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
 }
 
 
