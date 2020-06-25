@@ -36,9 +36,9 @@ public class PageAcceuilController {
 	private int chapardage2 = 1;
 	private int chapardage3 = 1;
 	
-	private Lecteur lecteur = new Lecteur("");
+	private Lecteur lecteur = new Lecteur("Theh2zo",3);
 	
-	static public Utilisateur user = new Utilisateur();
+	
 
 	@FXML
 	private ImageView ImgHistorique1;
@@ -149,7 +149,6 @@ public class PageAcceuilController {
 	
 	@FXML
 	protected void PushConnexion(ActionEvent e) throws IOException {
-			user.setPseudo(Nom.getText());
 			Parent home_p = FXMLLoader.load(getClass().getResource("Page1.fxml"));
 			Scene home_s = new Scene(home_p);
 			Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -423,7 +422,6 @@ public class PageAcceuilController {
 	protected void TauxVictoire(MouseEvent e) {
 		if (chapardage ==1) {
 			
-			TextNomInvocateur.setText(user.getPseudo());
 			/////////////////////////////////////////////////////////////////////////////////////
 			double Victoire = 75;
 			double Defaite = (100-Victoire);
@@ -1461,7 +1459,7 @@ public class PageAcceuilController {
 				model1.setDate_Annee2(date_Annee);
 			}
 		}
-		else { // Remplir la première case
+		else { // Remplir la premiï¿½re case
 			ImgHistorique1.setImage(img_champ);
 			model1.setImgHistorique1(img_champ);
 			KillHistorique1.setText(_kill);
@@ -1994,7 +1992,7 @@ public class PageAcceuilController {
 				model1.setDate_Annee2(date_Annee);
 			}
 		}
-		else { // Remplir la première case
+		else { // Remplir la premiï¿½re case
 			ImgHistorique6.setImage(img_champ);
 			model1.setImgHistorique1(img_champ);
 			KillHistorique6.setText(_kill);
