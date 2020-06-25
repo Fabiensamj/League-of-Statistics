@@ -1,0 +1,149 @@
+Partie de : Theh2zo
+Date : 03/06/2020
+Champion joue : Pyke
+Resultat : Defaite
+Duree de la partie : 26:59
+
+-----
+
+Resume de la partie : 
+Equipe 1 :
+
+Toplaner : 
+	Champion              : Nasus
+	Pseudonyme            : Caplamme
+	Total Or              : 10775
+	Sbires tues           : 172
+	Soins prodigues       : 2120
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 7
+	Nombre de morts       : 4 
+	Nombre d'assistances  : 3
+	Equipement            : 1
+Jungler  : 
+	Champion              : Graves
+	Pseudonyme            : Nullos
+	Total Or              : 9050
+	Sbires tues           : 150
+	Soins prodigues       : 4293
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 4
+	Nombre de morts       : 9
+	Nombre d'assistances  : 3
+	Equipement            : 1
+Midlaner : 
+	Champion              : Pyke
+	Pseudonyme            : Theh2zo
+	Total Or              : 12842
+	Sbires tues           : 298
+	Soins prodigues       : 1007
+	Tourelles detruites   : 7
+	Nombre d'eliminations : 17
+	Nombre de morts       : 3
+	Nombre d'assistances  : 5
+	Equipement            : 3
+Adc      : 
+	Champion              : Jhin
+	Pseudonyme            : Aird
+	Total Or              : 7752
+	Sbires tues           : 140
+	Soins prodigues       : 3217
+	Tourelles detruites   : 1
+	Nombre d'eliminations : 0
+	Nombre de morts       : 3
+	Nombre d'assistances  : 6
+	Equipement            : 4
+Support  : 
+	Champion              : Veigar
+	Pseudonyme            : Mcdo
+	Total Or              : 6400
+	Sbires tues           : 31
+	Soins prodigues       : 500
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 1
+	Nombre de morts       : 7
+	Nombre d'assistances  : 2
+	Equipement            : 5
+
+
+Equipe 2 :
+
+Toplaner : 
+	Champion              : Wukong
+	Pseudonyme            : Gehen
+	Total Or              : 11905
+	Sbires tues           : 184
+	Soins prodigues       : 4000
+	Tourelles detruites   : 3
+	Nombre d'eliminations : 8
+	Nombre de morts       : 5
+	Nombre d'assistances  : 4
+	Equipement            : 3
+Jungler  : 
+	Champion              : Hecarim
+	Pseudonyme            : Lodxe
+	Total Or              : 11200
+	Sbires tues           : 161
+	Soins prodigues       : 16500
+	Tourelles detruites   : 2
+	Nombre d'eliminations : 6
+	Nombre de morts       : 2
+	Nombre d'assistances  : 8
+	Equipement            : 1
+Midlaner : 
+	Champion              : Leblanc
+	Pseudonyme            : PDF
+	Total Or              : 12804
+	Sbires tues           : 165
+	Soins prodigues       : 6160
+	Tourelles detruites   : 1
+	Nombre d'eliminations : 13
+	Nombre de morts       : 1
+	Nombre d'assistances  : 5
+	Equipement            : 2
+Adc      :
+	Champion              : Caitlyn
+	Pseudonyme            : Rails
+	Total Or              : 11002
+	Sbires tues           : 162
+	Soins prodigues       : 3634
+	Tourelles detruites   : 4
+	Nombre d'eliminations : 6
+	Nombre de morts       : 2
+	Nombre d'assistances  : 8
+	Equipement            : 4
+Support  : 
+	Champion              : Malphite
+	Pseudonyme            : Pigkeke
+	Total Or              : 7200
+	Sbires tues           : 32
+	Soins prodigues       : 1564
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 1
+	Nombre de morts       : 3
+	Nombre d'assistances  : 9
+	Equipement            : 5
+
+-----
+
+Details du joueur :
+	/*
+	
+	//Champion   : trouvable avec ligne 3
+	//Kda        : On fait le lien avec le pseudo et on l'affiche avec des /
+	//Pseudonyme : trouvable avec ligne 1
+	
+	*/
+	
+	// Sbires tues : Trouvable au dessus egalement
+	
+	Rune principale : Aery
+		Runes secondaires : Ruban de mana / Transcendence / Brulure
+		Runes terciaires : flash hextech / Savoir cosmique
+
+-----
+
+Avantage en or :
+	Avantage Total : 0 / -1110 / -3070 / -7185 / -5484 / -11378 / -11039
+//Positif = Equipe 1 - Negatif = equipe 2
+// Etant donne que nous le voulons toutes les 5 minutes on ne peut pas calculer depuis les infos precedentes

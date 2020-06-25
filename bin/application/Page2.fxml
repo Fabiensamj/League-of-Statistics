@@ -282,18 +282,18 @@
                                  <children>
                                     <VBox prefHeight="335.0" prefWidth="255.0" spacing="10.0">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="143.0" text="Nombre d'or" />
-                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="141.0" text="Sbires tués" />
-                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="141.0" text="Dégâts infligés">
+                                          <Button mnemonicParsing="false" onAction="#PushOr" prefHeight="25.0" prefWidth="143.0" text="Nombre d'or" />
+                                          <Button mnemonicParsing="false" onAction="#PushSbire" prefHeight="25.0" prefWidth="141.0" text="Sbires tués" />
+                                          <Button mnemonicParsing="false" onAction="#PushDegat" prefHeight="25.0" prefWidth="141.0" text="Dégâts infligés">
                                              <VBox.margin>
                                                 <Insets />
                                              </VBox.margin>
                                           </Button>
-                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="139.0" text="Soins Prodigués" />
-                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="141.0" text="Tourelles détruites" />
-                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="145.0" text="Nombres d'élimination" />
-                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="145.0" text="Nombres de morts" />
-                                          <Button mnemonicParsing="false" onAction="#PushGraphe" prefHeight="25.0" prefWidth="145.0" text="Nombres d'assistance" />
+                                          <Button mnemonicParsing="false" onAction="#PushSoin" prefHeight="25.0" prefWidth="139.0" text="Soins Prodigués" />
+                                          <Button mnemonicParsing="false" onAction="#PushTourelle" prefHeight="25.0" prefWidth="141.0" text="Tourelles détruites" />
+                                          <Button mnemonicParsing="false" onAction="#PushKill" prefHeight="25.0" prefWidth="145.0" text="Nombres d'élimination" />
+                                          <Button mnemonicParsing="false" onAction="#PushDeath" prefHeight="25.0" prefWidth="145.0" text="Nombres de morts" />
+                                          <Button mnemonicParsing="false" onAction="#PushAssist" prefHeight="25.0" prefWidth="145.0" text="Nombres d'assistance" />
                                        </children>
                                        <HBox.margin>
                                           <Insets left="5.0" top="25.0" />
@@ -307,7 +307,7 @@
                                         <CategoryAxis layoutX="90.0" layoutY="-90.0" prefWidth="334.0" side="BOTTOM" />
                                       </xAxis>
                                       <yAxis>
-                                        <NumberAxis animated="false" autoRanging="false" minorTickVisible="false" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" />
+                                        <NumberAxis animated="false" autoRanging="false" minorTickVisible="false" side="LEFT" tickLabelsVisible="false" tickMarkVisible="false" upperBound="20000.0" />
                                       </yAxis>
                                     </BarChart>
                                  </children>

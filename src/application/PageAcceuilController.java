@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
@@ -28,6 +29,8 @@ public class PageAcceuilController {
 	private Model model1;
 	
 	private int chapardage = 1;
+	
+	private Lecteur lecteur = new Lecteur("Theh2zo");
 
 	@FXML
 	private PieChart TauxVictoire;
@@ -88,30 +91,134 @@ public class PageAcceuilController {
 	}
 
 	
-	/*
+	/*=================================================================
 	 * Graphes en barre de la section graphique
+	 * ================================================================
 	 */
 	@FXML
-	protected void PushGraphe(ActionEvent e)throws IOException {
+	protected void PushOr(ActionEvent e)throws IOException {
 		
-		
+		Joueur[][] tab= lecteur.getTabJoueur();
 		barchart.getData().clear();
 		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
-		series.getData().add(new XYChart.Data<>("test 1", 100));
-		series.getData().add(new XYChart.Data<>("test 2", 10));
-		series.getData().add(new XYChart.Data<>("test 3", 200));
-		series.getData().add(new XYChart.Data<>("test 4", 50));
-		series.getData().add(new XYChart.Data<>("test 5", 220));
-		series.getData().add(new XYChart.Data<>("test 6", 100));
-		series.getData().add(new XYChart.Data<>("test 7", 10));
-		series.getData().add(new XYChart.Data<>("test 8", 200));
-		series.getData().add(new XYChart.Data<>("test 9", 50));
-		series.getData().add(new XYChart.Data<>("test 10", 220));
+		
+		for(int i = 0; i<10;i++) {
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].totalOr));
+			System.out.println(tab[i][1].champion + " , " + tab[i][1].totalOr);
+		}
 		barchart.getData().add(series);
-		barchart.getXAxis().setTickLabelRotation(-90);
+		barchart.getXAxis().setTickLabelRotation(180);
 		barchart.getYAxis().setTickLabelsVisible(false);
 	    barchart.getYAxis().setOpacity(0);
 	}
+    @FXML
+    void PushSbire(ActionEvent event) {
+    	Joueur[][] tab= lecteur.getTabJoueur();
+		barchart.getData().clear();
+		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
+		
+		for(int i = 0; i<10;i++) {
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].sbires));
+		}
+		barchart.getData().add(series);
+		barchart.getXAxis().setTickLabelRotation(180);
+		barchart.getYAxis().setTickLabelsVisible(false);
+	    barchart.getYAxis().setOpacity(0);
+
+    }
+    @FXML
+    void PushDegat(ActionEvent event) {
+    	Joueur[][] tab= lecteur.getTabJoueur();
+		barchart.getData().clear();
+		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
+		
+		for(int i = 0; i<10;i++) {
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].totalOr));
+		}
+		barchart.getData().add(series);
+		barchart.getXAxis().setTickLabelRotation(180);
+		barchart.getYAxis().setTickLabelsVisible(false);
+	    barchart.getYAxis().setOpacity(0);
+
+    }
+    @FXML
+    void PushSoin(ActionEvent event) {
+    	Joueur[][] tab= lecteur.getTabJoueur();
+		barchart.getData().clear();
+		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
+		
+		for(int i = 0; i<10;i++) {
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].soins));
+		}
+		barchart.getData().add(series);
+		barchart.getXAxis().setTickLabelRotation(180);
+		barchart.getYAxis().setTickLabelsVisible(false);
+	    barchart.getYAxis().setOpacity(0);
+
+    }
+    @FXML
+    void PushTourelle(ActionEvent event) {
+    	Joueur[][] tab= lecteur.getTabJoueur();
+		barchart.getData().clear();
+		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
+		
+		for(int i = 0; i<10;i++) {
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].tourelles));
+			
+		}
+		barchart.getData().add(series);
+		barchart.getXAxis().setTickLabelRotation(180);
+		barchart.getYAxis().setTickLabelsVisible(false);
+	    barchart.getYAxis().setOpacity(0);
+
+    }
+    @FXML
+    void PushKill(ActionEvent event) {
+    	Joueur[][] tab= lecteur.getTabJoueur();
+		barchart.getData().clear();
+		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
+		
+		for(int i = 0; i<10;i++) {
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].eliminations));
+		}
+		barchart.getData().add(series);
+		barchart.getXAxis().setTickLabelRotation(180);
+		barchart.getYAxis().setTickLabelsVisible(false);
+	    barchart.getYAxis().setOpacity(0);
+
+    }
+    @FXML
+    void PushDeath(ActionEvent event) {
+    	Joueur[][] tab= lecteur.getTabJoueur();
+		barchart.getData().clear();
+		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
+		
+		for(int i = 0; i<10;i++) {
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].morts));
+		}
+		barchart.getData().add(series);
+		barchart.getXAxis().setTickLabelRotation(180);
+		barchart.getYAxis().setTickLabelsVisible(false);
+	    barchart.getYAxis().setOpacity(0);
+
+    }
+	
+	@FXML
+    void PushAssist(ActionEvent event) {
+		Joueur[][] tab= lecteur.getTabJoueur();
+		barchart.getData().clear();
+		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
+		
+		for(int i = 0; i<10;i++) {
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].assistances));
+		}
+		barchart.getData().add(series);
+		barchart.getXAxis().setTickLabelRotation(180);
+		barchart.getYAxis().setTickLabelsVisible(false);
+	    barchart.getYAxis().setOpacity(0);
+
+    }
+
 	/*
 	 * Graphe en courbe de la partie avantage
 	 */
