@@ -18,98 +18,102 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PageAcceuilController">
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#SaveHistory" prefHeight="521.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PageAcceuilController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Button id="BtnChargerPartie" layoutY="-3.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="231.0" text="Charger Partie" textOverrun="WORD_ELLIPSIS" />
+            <Button id="BtnChargerPartie" layoutY="-3.0" mnemonicParsing="false" onMouseClicked="#Historique2" prefHeight="58.0" prefWidth="231.0" text="Charger Partie" textOverrun="WORD_ELLIPSIS" />
             <ListView id="Historique" layoutY="55.0" prefHeight="469.0" prefWidth="231.0" />
             <Pane layoutY="71.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
                <children>
-                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Img/champion/Akali.jpg" />
-                     </image>
-                  </ImageView>
+                  <ImageView id="ImgHistorique1" fx:id="ImgHistorique6" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />
                   <Label layoutX="40.0" layoutY="43.0" text="/" />
-                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
-                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
-                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
-                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
-                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+                  <Label id="KillHistorique1" fx:id="KillHistorique6" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique1" fx:id="DeathHistorique6" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique1" fx:id="AssistHistorique6" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique1" fx:id="ResultHistorique6" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" />
+                  <Label id="Date_Jour1" fx:id="Date_Jour6" layoutX="93.0" layoutY="43.0" prefHeight="17.0" prefWidth="17.0" />
+                  <Label layoutX="110.0" layoutY="43.0" text="/" />
+                  <Label id="Date_Mois1" fx:id="Date_Mois6" layoutX="116.0" layoutY="43.0" />
+                  <Label id="Date_Annee1" fx:id="Date_Annee6" layoutX="134.0" layoutY="43.0" />
+                  <Label layoutX="129.0" layoutY="43.0" text="/" />
                </children>
             </Pane>
             <Pane layoutY="164.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
                <children>
-                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Img/champion/Camille.jpg" />
-                     </image>
-                  </ImageView>
+                  <ImageView id="ImgHistorique2" fx:id="ImgHistorique7" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />
                   <Label layoutX="40.0" layoutY="43.0" text="/" />
-                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
-                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
-                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
-                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
-                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+                  <Label id="KillHistorique2" fx:id="KillHistorique7" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique2" fx:id="DeathHistorique7" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique2" fx:id="AssistHistorique7" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique2" fx:id="ResultHistorique7" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" />
+                  <Label id="Date_Jour2" fx:id="Date_Jour7" layoutX="93.0" layoutY="45.0" prefHeight="17.0" prefWidth="17.0" />
+                  <Label layoutX="108.0" layoutY="45.0" text="/" />
+                  <Label id="Date_Mois2" fx:id="Date_Mois7" layoutX="117.0" layoutY="45.0" />
+                  <Label layoutX="130.0" layoutY="45.0" text="/" />
+                  <Label id="Date_Annee2" fx:id="Date_Annee7" layoutX="135.0" layoutY="45.0" />
                </children>
             </Pane>
             <Pane layoutY="253.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
                <children>
-                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Img/champion/Garen.jpg" />
-                     </image>
-                  </ImageView>
+                  <ImageView id="ImgHistorique3" fx:id="ImgHistorique8" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />
                   <Label layoutX="40.0" layoutY="43.0" text="/" />
-                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
-                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
-                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
-                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
-                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+                  <Label id="KillHistorique3" fx:id="KillHistorique8" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique3" fx:id="DeathHistorique8" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique3" fx:id="AssistHistorique8" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique3" fx:id="ResultHistorique8" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" />
+                  <Label id="Date_Jour3" fx:id="Date_Jour8" layoutX="86.0" layoutY="39.0" prefHeight="17.0" prefWidth="17.0" />
+                  <Label layoutX="101.0" layoutY="39.0" text="/" />
+                  <Label id="Date_Mois3" fx:id="Date_Mois8" layoutX="109.0" layoutY="39.0" />
+                  <Label layoutX="128.0" layoutY="39.0" text="/" />
+                  <Label id="Date_Annee3" fx:id="Date_Annee8" layoutX="136.0" layoutY="39.0" />
                </children>
             </Pane>
             <Pane layoutY="342.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
                <children>
-                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Img/champion/Graves.jpg" />
-                     </image>
-                  </ImageView>
+                  <ImageView id="ImgHistorique4" fx:id="ImgHistorique9" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />
                   <Label layoutX="40.0" layoutY="43.0" text="/" />
-                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
-                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
-                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
-                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
-                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+                  <Label id="KillHistorique4" fx:id="KillHistorique9" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique4" fx:id="DeathHistorique9" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique4" fx:id="AssistHistorique9" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique4" fx:id="ResultHistorique9" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" />
+                  <Label id="Date_Jour4" fx:id="Date_Jour9" layoutX="93.0" layoutY="43.0" prefHeight="17.0" prefWidth="17.0" />
+                  <Label layoutX="107.0" layoutY="43.0" text="/" />
+                  <Label id="Date_Mois4" fx:id="Date_Mois9" layoutX="116.0" layoutY="42.0" />
+                  <Label layoutX="129.0" layoutY="42.0" text="/" />
+                  <Label id="Date_Annee4" fx:id="Date_Annee9" layoutX="136.0" layoutY="43.0" />
                </children>
             </Pane>
             <Pane layoutY="431.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
                <children>
-                  <ImageView id="ImgHistorique1" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Img/champion/Kassadin.jpg" />
-                     </image>
-                  </ImageView>
+                  <ImageView id="ImgHistorique5" fx:id="ImgHistorique10" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />
                   <Label layoutX="40.0" layoutY="43.0" text="/" />
-                  <Label id="KillHistorique1" layoutX="11.0" layoutY="43.0" text="0" />
-                  <Label id="DeathHistorique1" layoutX="30.0" layoutY="43.0" text="0" />
-                  <Label id="ResultHistorique1" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" text="Victory" />
-                  <Label id="AssistHistorique1" layoutX="49.0" layoutY="43.0" text="0" />
-                  <Label id="DateHistorique1" layoutX="109.0" layoutY="43.0" prefHeight="17.0" prefWidth="73.0" text="21/06/2020" />
+                  <Label id="KillHistorique5" fx:id="KillHistorique10" layoutX="11.0" layoutY="43.0" text="0" />
+                  <Label id="DeathHistorique5" fx:id="DeathHistorique10" layoutX="30.0" layoutY="43.0" text="0" />
+                  <Label id="AssistHistorique5" fx:id="AssistHistorique10" layoutX="49.0" layoutY="43.0" text="0" />
+                  <Label id="ResultHistorique5" fx:id="ResultHistorique10" layoutX="101.0" layoutY="8.0" prefHeight="22.0" prefWidth="122.0" />
+                  <Label id="Date_Jour5" fx:id="Date_Jour10" layoutX="92.0" layoutY="45.0" prefHeight="17.0" prefWidth="17.0" />
+                  <Label layoutX="107.0" layoutY="44.0" text="/" />
+                  <Label id="Date_Mois5" fx:id="Date_Mois10" layoutX="116.0" layoutY="45.0" />
+                  <Label layoutX="135.0" layoutY="45.0" text="/" />
+                  <Label id="Date_Annee5" fx:id="Date_Annee10" layoutX="147.0" layoutY="46.0" />
                </children>
             </Pane>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="472.0" prefWidth="488.0">
          <children>
             <Button id="BtnDeconnecter" layoutX="396.0" mnemonicParsing="false" onAction="#PushDeconnexion" prefHeight="58.0" prefWidth="151.0" text="Déconnecter" />
-            <Label id="Titre" layoutX="14.0" layoutY="29.0" prefHeight="46.0" prefWidth="231.0" text="League of Statistics" />
+            <Label id="Titre" contentDisplay="CENTER" graphicTextGap="8.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#PushReturn" prefHeight="46.0" prefWidth="231.0" text="League of Statistics">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
             <Label id="TextNomInvocateur" layoutX="14.0" layoutY="67.0" prefHeight="22.0" prefWidth="82.0" text="Gilcookie" />
             <TabPane layoutX="14.0" layoutY="129.0" prefHeight="389.0" prefWidth="534.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
