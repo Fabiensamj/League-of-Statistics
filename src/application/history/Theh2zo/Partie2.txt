@@ -1,22 +1,22 @@
 Partie de : Theh2zo
 Date : 02/06/2020
-Champion joué : Malzahar
-Résultat : Défaite
-Durée de la partie : 34:17
+Champion joue : Malzahar
+Resultat : Defaite
+Duree de la partie : 34:17
 
 -----
 
-Résumé de la partie : 
+Resume de la partie : 
 Equipe 1 :
 
 Toplaner : 
 	Champion              : Camille
 	Pseudonyme            : OuiOui
 	Total Or              : 7541
-	Sbires tués           : 220
-	Soins prodigués       : 2120
-	Tourelles détruites   : 0
-	Nombre d'éliminations : 3
+	Sbires tues           : 220
+	Soins prodigues       : 2120
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 3
 	Nombre de morts       : 6 
 	Nombre d'assistances  : 5
 	Equipement            : 1
@@ -24,10 +24,10 @@ Jungler  :
 	Champion              : Vi
 	Pseudonyme            : LeRoiF
 	Total Or              : 8004
-	Sbires tués           : 200
-	Soins prodigués       : 159
-	Tourelles détruites   : 2
-	Nombre d'éliminations : 5
+	Sbires tues           : 200
+	Soins prodigues       : 159
+	Tourelles detruites   : 2
+	Nombre d'eliminations : 5
 	Nombre de morts       : 3
 	Nombre d'assistances  : 4
 	Equipement            : 1
@@ -35,10 +35,10 @@ Midlaner :
 	Champion              : Malzahar
 	Pseudonyme            : Theh2zo
 	Total Or              : 12842
-	Sbires tués           : 298
-	Soins prodigués       : 1007
-	Tourelles détruites   : 7
-	Nombre d'éliminations : 17
+	Sbires tues           : 298
+	Soins prodigues       : 1007
+	Tourelles detruites   : 7
+	Nombre d'eliminations : 17
 	Nombre de morts       : 3
 	Nombre d'assistances  : 5
 	Equipement            : 3
@@ -46,10 +46,10 @@ Adc      :
 	Champion              : Jinx
 	Pseudonyme            : ethdf
 	Total Or              : 7548
-	Sbires tués           : 158
-	Soins prodigués       : 3217
-	Tourelles détruites   : 1
-	Nombre d'éliminations : 5
+	Sbires tues           : 158
+	Soins prodigues       : 3217
+	Tourelles detruites   : 1
+	Nombre d'eliminations : 5
 	Nombre de morts       : 7
 	Nombre d'assistances  : 1
 	Equipement            : 4
@@ -57,10 +57,10 @@ Support  :
 	Champion              : Lux
 	Pseudonyme            : Poi58
 	Total Or              : 5487
-	Sbires tués           : 35
-	Soins prodigués       : 698
-	Tourelles détruites   : 0
-	Nombre d'éliminations : 3
+	Sbires tues           : 35
+	Soins prodigues       : 698
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 3
 	Nombre de morts       : 14
 	Nombre d'assistances  : 8
 	Equipement            : 5
@@ -72,10 +72,10 @@ Toplaner :
 	Champion              : Urgot
 	Pseudonyme            : Ouimaj
 	Total Or              : 8050
-	Sbires tués           : 265
-	Soins prodigués       : 2457
-	Tourelles détruites   : 3
-	Nombre d'éliminations : 10
+	Sbires tues           : 265
+	Soins prodigues       : 2457
+	Tourelles detruites   : 3
+	Nombre d'eliminations : 10
 	Nombre de morts       : 5
 	Nombre d'assistances  : 4
 	Equipement            : 3
@@ -83,10 +83,10 @@ Jungler  :
 	Champion              : Olaf
 	Pseudonyme            : OlafIsTheBest
 	Total Or              : 9587
-	Sbires tués           : 234
-	Soins prodigués       : 8274
-	Tourelles détruites   : 2
-	Nombre d'éliminations : 12
+	Sbires tues           : 234
+	Soins prodigues       : 8274
+	Tourelles detruites   : 2
+	Nombre d'eliminations : 12
 	Nombre de morts       : 6
 	Nombre d'assistances  : 2
 	Equipement            : 1
@@ -94,10 +94,10 @@ Midlaner :
 	Champion              : Akali
 	Pseudonyme            : Palpal
 	Total Or              : 6045
-	Sbires tués           : 148
-	Soins prodigués       : 2457
-	Tourelles détruites   : 0
-	Nombre d'éliminations : 1
+	Sbires tues           : 148
+	Soins prodigues       : 2457
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 1
 	Nombre de morts       : 8
 	Nombre d'assistances  : 1
 	Equipement            : 2
@@ -105,10 +105,10 @@ Adc      :
 	Champion              : Lucian
 	Pseudonyme            : zuther
 	Total Or              : 8594
-	Sbires tués           : 248
-	Soins prodigués       : 4521
-	Tourelles détruites   : 4
-	Nombre d'éliminations : 12
+	Sbires tues           : 248
+	Soins prodigues       : 4521
+	Tourelles detruites   : 4
+	Nombre d'eliminations : 12
 	Nombre de morts       : 7
 	Nombre d'assistances  : 3
 	Equipement            : 4
@@ -116,17 +116,17 @@ Support  :
 	Champion              : Yuumi
 	Pseudonyme            : Metabuser
 	Total Or              : 7804
-	Sbires tués           : 11
-	Soins prodigués       : 6664
-	Tourelles détruites   : 0
-	Nombre d'éliminations : 6
+	Sbires tues           : 11
+	Soins prodigues       : 6664
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 6
 	Nombre de morts       : 2
 	Nombre d'assistances  : 15
 	Equipement            : 5
 
 -----
 
-Détails du joueur :
+Details du joueur :
 	
 	
 	//le champion   : trouvable avec ligne 3
@@ -135,7 +135,7 @@ Détails du joueur :
 	
 	*/
 	
-	// Sbires tués : Trouvable au dessus également
+	// Sbires tues : Trouvable au dessus egalement
 	
 	Rune principale : Aery
 
@@ -143,8 +143,8 @@ Détails du joueur :
 
 Avantage en or :
 	Avantage Total : 0 / -560 / -1484 / -1338 / -2071 / -2541 / -3145
-//Positif = Equipe 1 - Négatif = équipe 2
-// Etant donné que nous le voulons totues les 5 minutes on ne peut pas calculer depuis les infos précedentes
+//Positif = Equipe 1 - Negatif = equipe 2
+// Etant donne que nous le voulons totues les 5 minutes on ne peut pas calculer depuis les infos precedentes
 	
 	
 	

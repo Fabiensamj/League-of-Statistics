@@ -6,12 +6,15 @@ import java.io.InputStreamReader;
 
 public class Lecteur {
 	
+	final static int nbParties = 3;
+	
 	private String partieResume;
-	private Joueur[][] tabJoueur = new Joueur[10][2];//nb de joueurs - nb de Parties
+	private Joueur[][] tabJoueur = new Joueur[10][nbParties];//nb de joueurs - nb de Parties
 	private int numPartie = 0;
 	private int cptJoueur;
 	
-	public Lecteur()
+	
+	public Lecteur(String user)
 	{
 	    String ligne;
 		try
@@ -20,10 +23,10 @@ public class Lecteur {
 			InputStreamReader ipsr;
 			BufferedReader buffer;
 			
-			while ( this.numPartie < 2)
+			while ( this.numPartie < nbParties)
 			{
 				this.cptJoueur = 0;
-				ips = this.getClass().getResourceAsStream("/application/history/Theh2zo/Partie"+(this.numPartie+1)+".txt");
+				ips = this.getClass().getResourceAsStream("/application/history/"+user+"/Partie"+(this.numPartie+1)+".txt");
 				ipsr = new InputStreamReader(ips);
 				buffer = new BufferedReader(ipsr);
 				// traitement
@@ -33,7 +36,7 @@ public class Lecteur {
 				}
 				// fermeture
 				buffer.close();
-				System.out.println("Affichage des Données de la partie n°"+ (this.numPartie+1));
+				System.out.println("\n Affichage des Donnees de la partie n°"+ (this.numPartie+1));
 				//Thread.sleep(1000);
 				this.affecterDonnees();
 				
@@ -51,7 +54,7 @@ public class Lecteur {
 		String[] lignes = partieResume.split("\n");
 		String[] decoup;
 		
-		System.out.println(this.numPartie);
+		//System.out.println(this.numPartie);
 		for(int cpt=0; cpt < tabJoueur.length;cpt++)
 		{
 			//System.out.println(cpt);
@@ -77,22 +80,22 @@ public class Lecteur {
 				decoup = lignes[cpt].split(":");
 				this.tabJoueur[cptJoueur][this.numPartie].setTotalOr(Integer.parseInt(decoup[1].trim()));
 			}
-			if (lignes[cpt].matches("^	Sbires tués.*"))
+			if (lignes[cpt].matches("^	Sbires tues.*"))
 			{
 				decoup = lignes[cpt].split(":");
 				this.tabJoueur[cptJoueur][this.numPartie].setSbires(Integer.parseInt(decoup[1].trim()));
 			}
-			if (lignes[cpt].matches("^	Soins prodigués.*"))
+			if (lignes[cpt].matches("^	Soins prodigues.*"))
 			{
 				decoup = lignes[cpt].split(":");
 				this.tabJoueur[cptJoueur][this.numPartie].setSoins(Integer.parseInt(decoup[1].trim()));
 			}
-			if (lignes[cpt].matches("^	Tourelles détruites.*"))
+			if (lignes[cpt].matches("^	Tourelles detruites.*"))
 			{
 				decoup = lignes[cpt].split(":");
 				this.tabJoueur[cptJoueur][this.numPartie].setTourelles(Integer.parseInt(decoup[1].trim()));
 			}
-			if (lignes[cpt].matches("^	Nombre d'éliminations.*"))
+			if (lignes[cpt].matches("^	Nombre d'eliminations.*"))
 			{
 				decoup = lignes[cpt].split(":");
 				this.tabJoueur[cptJoueur][this.numPartie].setEliminations(Integer.parseInt(decoup[1].trim()));
@@ -132,7 +135,7 @@ public class Lecteur {
 	}
 	public static void main(String[] args) {
 		
-		Lecteur l = new Lecteur();
+		Lecteur l = new Lecteur("Theh2zo");
 	}
 }
 
