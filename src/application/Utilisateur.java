@@ -93,8 +93,7 @@ public class Utilisateur {
 	public String toString() {
 		return "Utilisateur [pseudo=" + pseudo + ", nbVictoires=" + nbVictoires + ", nbDefaites=" + nbDefaites
 				+ ", nbParties=" + nbParties + ", winrate=" + this.getWinrate()+"%" + ", elo=" + elo + ", alChamp=" + alChamp + "]";
-	}
-	
-	
-	
+	}	
+
 }
+
