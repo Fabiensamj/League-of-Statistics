@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Utilisateur {
 	
-	String pseudo;
+	String pseudo = "";
 	int nbVictoires = 0;
 	int nbDefaites = 0;
 	int nbParties;

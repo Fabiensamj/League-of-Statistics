@@ -3,6 +3,7 @@ package application;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,7 +37,7 @@ public class PageAcceuilController {
 	private int chapardage2 = 1;
 	private int chapardage3 = 1;
 	
-	private Lecteur lecteur = new Lecteur("Theh2zo",3);
+	public static Lecteur lecteur;
 	
 	
 
@@ -129,26 +130,83 @@ public class PageAcceuilController {
 	private Label Date_Annee5;
 	
 	@FXML
+	private TextArea Nom;
+	
+	///// Page 1 /////
+	
+	@FXML
+	private Label TextNombreDor;
+
+	@FXML
+	private Label TextSbiresTues;
+
+	@FXML
+	private Label TextDegatsInfliges;
+	
+	@FXML
+	private Label TextSoinsProdigues;
+	
+	@FXML
+	private Label TextTourellesDetruites;
+	
+	@FXML
+	private Label TextNombreDeliminations;
+	
+	@FXML
+	private Label TextNombreDeMorts;
+	
+	@FXML
+	private Label TextNombreDassistance;
+	
+	@FXML
 	private PieChart TauxVictoire;
 	
 	@FXML
 	private Polygon GraphDiagram;
 
-	
 	@FXML
 	private Label TextNomInvocateur;
-	
+
 	@FXML
-	private TextArea Nom;
+	private Label TextClassement;
+	
 	@FXML
     private BarChart<String, Integer> barchart;
-	 @FXML
+	
+	@FXML
     private LineChart<Integer,Integer> linechart;
 	
+///// Page 2 /////
 	
+	static int numPartie = 0;
+	
+	@FXML
+	private Label NomE1C1, NomE1C2, NomE1C3, NomE1C4, NomE1C5, NomE2C1, NomE2C2, NomE2C3, NomE2C4, NomE2C5;
+	
+	@FXML
+	private Label KillE1C1, KillE1C2, KillE1C3, KillE1C4, KillE1C5, KillE2C1, KillE2C2, KillE2C3, KillE2C4, KillE2C5;
+	
+	@FXML
+	private Label DeathE1C1, DeathE1C2, DeathE1C3, DeathE1C4, DeathE1C5, DeathE2C1, DeathE2C2, DeathE2C3, DeathE2C4, DeathE2C5;
+	
+	@FXML
+	private Label AssistE1C1, AssistE1C2, AssistE1C3, AssistE1C4, AssistE1C5, AssistE2C1, AssistE2C2, AssistE2C3, AssistE2C4, AssistE2C5;
+	
+	@FXML
+	private Label DetailsNom, DetailsSbires, DetailsKill, DetailsDeath, DetailsAssist;
+	
+	@FXML
+	private ImageView DetailsItem, DetailsRunes, DetailsLogo;
+	
+	@FXML
+	private ImageView ImgE1C1, ImgE1C2, ImgE1C3, ImgE1C4, ImgE1C5, ImgE2C1, ImgE2C2, ImgE2C3, ImgE2C4, ImgE2C5;
+	
+	///// Fonctions /////
 	
 	@FXML
 	protected void PushConnexion(ActionEvent e) throws IOException {
+			lecteur = new Lecteur(Nom.getText(), 3);
+			System.out.printf("PSEUDO : " + lecteur.getUtilisateur().getPseudo());
 			Parent home_p = FXMLLoader.load(getClass().getResource("Page1.fxml"));
 			Scene home_s = new Scene(home_p);
 			Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -162,7 +220,6 @@ public class PageAcceuilController {
 	
 	@FXML
 	protected void PushReturn(MouseEvent e) throws IOException {
-			
 			Parent home_p = FXMLLoader.load(getClass().getResource("Page1.fxml"));
 			Scene home_s = new Scene(home_p);
 			Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -236,6 +293,7 @@ public class PageAcceuilController {
 		Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		app_stage.setScene(home_s);
 		app_stage.show();
+		numPartie = 0;
 		chapardage = 1;
 		chapardage2 = 1;
 		chapardage3 = 1;
@@ -416,11 +474,223 @@ public class PageAcceuilController {
         
     }
 	
-	
+	@FXML
+    void initPage2(MouseEvent event) {
+    	//System.out.printf("Insertion des données Page 2");
+    	if(chapardage2 == 1){
+    		System.out.printf("Insertion des données Page 2 \n");
+    		
+    		TextNomInvocateur.setText(lecteur.getUtilisateur().getPseudo());
+    		
+    		///// Resume /////
+    		
+    		NomE1C1.setText(lecteur.getTabJoueur()[0][numPartie].getPseudo());
+    		KillE1C1.setText(Integer.toString(lecteur.getTabJoueur()[0][numPartie].getEliminations()));
+    		DeathE1C1.setText(Integer.toString(lecteur.getTabJoueur()[0][numPartie].getMorts()));
+    		AssistE1C1.setText(Integer.toString(lecteur.getTabJoueur()[0][numPartie].getAssistances()));
+    		
+    		NomE1C2.setText(lecteur.getTabJoueur()[1][numPartie].getPseudo());
+    		KillE1C2.setText(Integer.toString(lecteur.getTabJoueur()[1][numPartie].getEliminations()));
+    		DeathE1C2.setText(Integer.toString(lecteur.getTabJoueur()[1][numPartie].getMorts()));
+    		AssistE1C2.setText(Integer.toString(lecteur.getTabJoueur()[1][numPartie].getAssistances()));
+    		
+    		NomE1C3.setText(lecteur.getTabJoueur()[2][numPartie].getPseudo());
+    		KillE1C3.setText(Integer.toString(lecteur.getTabJoueur()[2][numPartie].getEliminations()));
+    		DeathE1C3.setText(Integer.toString(lecteur.getTabJoueur()[2][numPartie].getMorts()));
+    		AssistE1C3.setText(Integer.toString(lecteur.getTabJoueur()[2][numPartie].getAssistances()));
+    		
+    		NomE1C4.setText(lecteur.getTabJoueur()[3][numPartie].getPseudo());
+    		KillE1C4.setText(Integer.toString(lecteur.getTabJoueur()[3][numPartie].getEliminations()));
+    		DeathE1C4.setText(Integer.toString(lecteur.getTabJoueur()[3][numPartie].getMorts()));
+    		AssistE1C4.setText(Integer.toString(lecteur.getTabJoueur()[3][numPartie].getAssistances()));
+    		
+    		NomE1C5.setText(lecteur.getTabJoueur()[4][numPartie].getPseudo());
+    		KillE1C5.setText(Integer.toString(lecteur.getTabJoueur()[4][numPartie].getEliminations()));
+    		DeathE1C5.setText(Integer.toString(lecteur.getTabJoueur()[4][numPartie].getMorts()));
+    		AssistE1C5.setText(Integer.toString(lecteur.getTabJoueur()[4][numPartie].getAssistances()));
+    		
+    		NomE2C1.setText(lecteur.getTabJoueur()[5][numPartie].getPseudo());
+    		KillE2C1.setText(Integer.toString(lecteur.getTabJoueur()[5][numPartie].getEliminations()));
+    		DeathE2C1.setText(Integer.toString(lecteur.getTabJoueur()[5][numPartie].getMorts()));
+    		AssistE2C1.setText(Integer.toString(lecteur.getTabJoueur()[5][numPartie].getAssistances()));
+    		
+    		NomE2C2.setText(lecteur.getTabJoueur()[6][numPartie].getPseudo());
+    		KillE2C2.setText(Integer.toString(lecteur.getTabJoueur()[6][numPartie].getEliminations()));
+    		DeathE2C2.setText(Integer.toString(lecteur.getTabJoueur()[6][numPartie].getMorts()));
+    		AssistE2C2.setText(Integer.toString(lecteur.getTabJoueur()[6][numPartie].getAssistances()));
+    		
+    		NomE2C3.setText(lecteur.getTabJoueur()[7][numPartie].getPseudo());
+    		KillE2C3.setText(Integer.toString(lecteur.getTabJoueur()[7][numPartie].getEliminations()));
+    		DeathE2C3.setText(Integer.toString(lecteur.getTabJoueur()[7][numPartie].getMorts()));
+    		AssistE2C3.setText(Integer.toString(lecteur.getTabJoueur()[7][numPartie].getAssistances()));
+    		
+    		NomE2C4.setText(lecteur.getTabJoueur()[8][numPartie].getPseudo());
+    		KillE2C4.setText(Integer.toString(lecteur.getTabJoueur()[8][numPartie].getEliminations()));
+    		DeathE2C4.setText(Integer.toString(lecteur.getTabJoueur()[8][numPartie].getMorts()));
+    		AssistE2C4.setText(Integer.toString(lecteur.getTabJoueur()[8][numPartie].getAssistances()));
+    		
+    		NomE2C5.setText(lecteur.getTabJoueur()[9][numPartie].getPseudo());
+    		KillE2C5.setText(Integer.toString(lecteur.getTabJoueur()[9][numPartie].getEliminations()));
+    		DeathE2C5.setText(Integer.toString(lecteur.getTabJoueur()[9][numPartie].getMorts()));
+    		AssistE2C5.setText(Integer.toString(lecteur.getTabJoueur()[9][numPartie].getAssistances()));
+    		
+    		Class<?> clazz = this.getClass();
+    		InputStream input;
+    		Image image;
+    		
+    		/*
+    		String logo1 = "/application/Img/champion/" + lecteur.getTabJoueur()[0][numPartie].getChampion() + ".jpg";
+    		String logo2 = "/application/Img/champion/" + lecteur.getTabJoueur()[1][numPartie].getChampion() + ".jpg";
+    		String logo3 = "/application/Img/champion/" + lecteur.getTabJoueur()[2][numPartie].getChampion() + ".jpg";
+    		String logo4 = "/application/Img/champion/" + lecteur.getTabJoueur()[3][numPartie].getChampion() + ".jpg";
+    		String logo5 = "/application/Img/champion/" + lecteur.getTabJoueur()[4][numPartie].getChampion() + ".jpg";
+    		String logo6 = "/application/Img/champion/" + lecteur.getTabJoueur()[5][numPartie].getChampion() + ".jpg";
+    		String logo7 = "/application/Img/champion/" + lecteur.getTabJoueur()[6][numPartie].getChampion() + ".jpg";
+    		String logo8 = "/application/Img/champion/" + lecteur.getTabJoueur()[7][numPartie].getChampion() + ".jpg";
+    		String logo9 = "/application/Img/champion/" + lecteur.getTabJoueur()[8][numPartie].getChampion() + ".jpg";
+    		String logo10 = "/application/Img/champion/" + lecteur.getTabJoueur()[9][numPartie].getChampion() + ".jpg";
+    		
+    		input = clazz.getResourceAsStream(logo1);
+    		image = new Image(input);   		
+    		ImgE1C1.setImage(image);
+    		
+    		input = clazz.getResourceAsStream(logo2);
+    		image = new Image(input);   		
+    		ImgE1C2.setImage(image);
+    		
+    		input = clazz.getResourceAsStream(logo3);
+    		image = new Image(input);   		
+    		ImgE1C3.setImage(image);
+    		
+    		input = clazz.getResourceAsStream(logo4);
+    		image = new Image(input);   		
+    		ImgE1C4.setImage(image);
+    		
+    		input = clazz.getResourceAsStream(logo5);
+    		image = new Image(input);   		
+    		ImgE1C5.setImage(image);
+    		
+    		input = clazz.getResourceAsStream(logo6);
+    		image = new Image(input);   		
+    		ImgE2C1.setImage(image);
+    		
+    		input = clazz.getResourceAsStream(logo7);
+    		image = new Image(input);   		
+    		ImgE2C2.setImage(image);
+    		
+    		input = clazz.getResourceAsStream(logo8);
+    		image = new Image(input);   		
+    		ImgE2C3.setImage(image);
+    		
+    		input = clazz.getResourceAsStream(logo9);
+    		image = new Image(input);   		
+    		ImgE2C4.setImage(image);
+    		
+    		input = clazz.getResourceAsStream(logo10);
+    		image = new Image(input);   		
+    		ImgE2C5.setImage(image);
+    		*/
+    		
+    		///// Details /////
+    		int lienPersJoueur = 0;
+    		
+    		for(int i = 0; i < 10; i++){
+    			if(lecteur.getTabJoueur()[i][numPartie].getPseudo().equals(lecteur.getUtilisateur().getPseudo())){
+    				lienPersJoueur = i;
+    			}
+    		}
+    		
+    		DetailsNom.setText(lecteur.getUtilisateur().getPseudo());
+    		DetailsKill.setText(Integer.toString(lecteur.getTabJoueur()[lienPersJoueur][numPartie].getEliminations()));
+    		DetailsDeath.setText(Integer.toString(lecteur.getTabJoueur()[lienPersJoueur][numPartie].getMorts()));
+    		DetailsAssist.setText(Integer.toString(lecteur.getTabJoueur()[lienPersJoueur][numPartie].getAssistances()));
+    		DetailsSbires.setText(Integer.toString(lecteur.getTabJoueur()[lienPersJoueur][numPartie].getSbires()));
+    		
+    		
+    		String imgEquipement = "/application/Img/Items/ItemsSet" + lecteur.getTabJoueur()[lienPersJoueur][numPartie].getEquipement() + ".png";
+    		System.out.printf("Image : " + imgEquipement);
+    		input = clazz.getResourceAsStream(imgEquipement);
+    		image = new Image(input);
+
+    		DetailsItem.setImage(image);
+    		
+    		/*
+    		String imgLogo = "/application/Img/champion/" + lecteur.getTabJoueur()[lienPersJoueur][numPartie].getChampion() + ".jpg";
+    		input = clazz.getResourceAsStream(imgLogo);
+    		image = new Image(input);
+    		
+    		DetailsLogo.setImage(image);
+    		*/
+    		
+    		///
+			ImgHistorique6.setImage(model1.getImgHistorique1());
+			KillHistorique6.setText(model1.getKillHistorique1());
+			DeathHistorique6.setText(model1.getDeathHistorique1());
+			AssistHistorique6.setText(model1.getAssistHistorique1());
+			ResultHistorique6.setText(model1.getResultHistorique1());
+			Date_Jour6.setText(model1.getDate_Jour1());
+			Date_Mois6.setText(model1.getDate_Mois1());
+			Date_Annee6.setText(model1.getDate_Annee1());
+		
+			ImgHistorique7.setImage(model1.getImgHistorique2());
+			KillHistorique7.setText(model1.getKillHistorique2());
+			DeathHistorique7.setText(model1.getDeathHistorique2());
+			AssistHistorique7.setText(model1.getAssistHistorique2());
+			ResultHistorique7.setText(model1.getResultHistorique2());
+			Date_Jour7.setText(model1.getDate_Jour2());
+			Date_Mois7.setText(model1.getDate_Mois2());
+			Date_Annee7.setText(model1.getDate_Annee2());
+		
+			ImgHistorique8.setImage(model1.getImgHistorique3());
+			KillHistorique8.setText(model1.getKillHistorique3());
+			DeathHistorique8.setText(model1.getDeathHistorique3());
+			AssistHistorique8.setText(model1.getAssistHistorique3());
+			ResultHistorique8.setText(model1.getResultHistorique3());
+			Date_Jour8.setText(model1.getDate_Jour3());
+			Date_Mois8.setText(model1.getDate_Mois3());
+			Date_Annee8.setText(model1.getDate_Annee3());
+		
+			ImgHistorique9.setImage(model1.getImgHistorique4());
+			KillHistorique9.setText(model1.getKillHistorique4());
+			DeathHistorique9.setText(model1.getDeathHistorique4());
+			AssistHistorique9.setText(model1.getAssistHistorique4());
+			ResultHistorique9.setText(model1.getResultHistorique4());
+			Date_Jour9.setText(model1.getDate_Jour4());
+			Date_Mois9.setText(model1.getDate_Mois4());
+			Date_Annee9.setText(model1.getDate_Annee4());
+		
+			ImgHistorique10.setImage(model1.getImgHistorique5());
+			KillHistorique10.setText(model1.getKillHistorique5());
+			DeathHistorique10.setText(model1.getDeathHistorique5());
+			AssistHistorique10.setText(model1.getAssistHistorique5());
+			ResultHistorique10.setText(model1.getResultHistorique5());
+			Date_Jour10.setText(model1.getDate_Jour5());
+			Date_Mois10.setText(model1.getDate_Mois5());
+			Date_Annee10.setText(model1.getDate_Annee5());
+			///
+    		
+    		chapardage2 = 0;
+    	}
+    }
 	
 	@FXML
 	protected void TauxVictoire(MouseEvent e) {
 		if (chapardage ==1) {
+			
+			TextNomInvocateur.setText(lecteur.getUtilisateur().getPseudo());
+			TextNombreDor.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneOr()));
+			TextNombreDeliminations.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneEliminations()));
+			TextNombreDeMorts.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneMorts()));
+			TextNombreDassistance.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneAssistances()));
+			TextSbiresTues.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneSbires()));
+			TextDegatsInfliges.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneDegats()));
+			TextSoinsProdigues.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneSoins()));
+			TextTourellesDetruites.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneTourelles()));
+			TextClassement.setText(lecteur.getUtilisateur().getElo());
+			
+			//faire l'image du classement
+
+			
 			
 			/////////////////////////////////////////////////////////////////////////////////////
 			double Victoire = 75;
@@ -973,63 +1243,6 @@ public class PageAcceuilController {
 			chapardage3 = 0;
 		}
 		else {}
-	}
-	
-	////////////////////////Mise A jour Page 2///////////////////////////////
-	
-	@FXML
-	protected void SaveHistory(MouseEvent e) {
-		
-		if (chapardage2 == 1) {
-			ImgHistorique6.setImage(model1.getImgHistorique1());
-			KillHistorique6.setText(model1.getKillHistorique1());
-			DeathHistorique6.setText(model1.getDeathHistorique1());
-			AssistHistorique6.setText(model1.getAssistHistorique1());
-			ResultHistorique6.setText(model1.getResultHistorique1());
-			Date_Jour6.setText(model1.getDate_Jour1());
-			Date_Mois6.setText(model1.getDate_Mois1());
-			Date_Annee6.setText(model1.getDate_Annee1());
-		
-			ImgHistorique7.setImage(model1.getImgHistorique2());
-			KillHistorique7.setText(model1.getKillHistorique2());
-			DeathHistorique7.setText(model1.getDeathHistorique2());
-			AssistHistorique7.setText(model1.getAssistHistorique2());
-			ResultHistorique7.setText(model1.getResultHistorique2());
-			Date_Jour7.setText(model1.getDate_Jour2());
-			Date_Mois7.setText(model1.getDate_Mois2());
-			Date_Annee7.setText(model1.getDate_Annee2());
-		
-			ImgHistorique8.setImage(model1.getImgHistorique3());
-			KillHistorique8.setText(model1.getKillHistorique3());
-			DeathHistorique8.setText(model1.getDeathHistorique3());
-			AssistHistorique8.setText(model1.getAssistHistorique3());
-			ResultHistorique8.setText(model1.getResultHistorique3());
-			Date_Jour8.setText(model1.getDate_Jour3());
-			Date_Mois8.setText(model1.getDate_Mois3());
-			Date_Annee8.setText(model1.getDate_Annee3());
-		
-			ImgHistorique9.setImage(model1.getImgHistorique4());
-			KillHistorique9.setText(model1.getKillHistorique4());
-			DeathHistorique9.setText(model1.getDeathHistorique4());
-			AssistHistorique9.setText(model1.getAssistHistorique4());
-			ResultHistorique9.setText(model1.getResultHistorique4());
-			Date_Jour9.setText(model1.getDate_Jour4());
-			Date_Mois9.setText(model1.getDate_Mois4());
-			Date_Annee9.setText(model1.getDate_Annee4());
-		
-			ImgHistorique10.setImage(model1.getImgHistorique5());
-			KillHistorique10.setText(model1.getKillHistorique5());
-			DeathHistorique10.setText(model1.getDeathHistorique5());
-			AssistHistorique10.setText(model1.getAssistHistorique5());
-			ResultHistorique10.setText(model1.getResultHistorique5());
-			Date_Jour10.setText(model1.getDate_Jour5());
-			Date_Mois10.setText(model1.getDate_Mois5());
-			Date_Annee10.setText(model1.getDate_Annee5());
-			
-			chapardage2 = 0;
-		}
-		else {}
-		
 	}
 	
 	////////////////////////Generation Hisotrique//////////////////////////////

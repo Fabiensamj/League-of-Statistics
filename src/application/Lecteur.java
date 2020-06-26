@@ -276,6 +276,10 @@ public class Lecteur {
 		return this.alDuree.get(numPartie-1);
 	}
 	
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+	
 	/*public static void main(String[] args) {
 		
 		Lecteur l = new Lecteur("Theh2zo", 3);
