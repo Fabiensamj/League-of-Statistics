@@ -1,0 +1,152 @@
+Partie de : Kilidferre
+Date : 03/06/2020
+Champion joue : Jinx
+Resultat : Victoire
+Duree de la partie : 38:12
+
+-----
+
+Resume de la partie : 
+Equipe 1 :
+
+Toplaner : 
+	Champion              : Sett
+	Pseudonyme            : DREEEMZ
+	Total Or              : 14956
+	Sbires tues           : 172
+	Soins prodigues       : 5941
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 7
+	Nombre de morts       : 0 
+	Nombre d'assistances  : 6
+	Equipement            : 1
+Jungler  : 
+	Champion              : Shen
+	Pseudonyme            : KingOfNerdz
+	Total Or              : 11840
+	Sbires tues           : 187
+	Soins prodigues       : 7622
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 1
+	Nombre de morts       : 3
+	Nombre d'assistances  : 15
+	Equipement            : 1
+Midlaner : 
+	Champion              : Azir
+	Pseudonyme            : Mokowskyy
+	Total Or              : 18260
+	Sbires tues           : 267
+	Soins prodigues       : 4009
+	Tourelles detruites   : 5
+	Nombre d'eliminations : 15
+	Nombre de morts       : 5
+	Nombre d'assistances  : 5
+	Equipement            : 3
+Adc      : 
+	Champion              : Jinx
+	Pseudonyme            : Kilidferre
+	Total Or              : 15800
+	Sbires tues           : 257
+	Soins prodigues       : 2500
+	Tourelles detruites   : 1
+	Nombre d'eliminations : 9
+	Nombre de morts       : 3
+	Nombre d'assistances  : 10
+	Equipement            : 4
+Support  : 
+	Champion              : Rakan
+	Pseudonyme            : saradobliks
+	Total Or              : 8957
+	Sbires tues           : 39
+	Soins prodigues       : 5900
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 0
+	Nombre de morts       : 3
+	Nombre d'assistances  : 15
+	Equipement            : 5
+
+
+Equipe 2 :
+
+Toplaner : 
+	Champion              : Renekton
+	Pseudonyme            : keyfortuina
+	Total Or              : 12455
+	Sbires tues           : 241
+	Soins prodigues       : 4000
+	Tourelles detruites   : 3
+	Nombre d'eliminations : 2
+	Nombre de morts       : 7
+	Nombre d'assistances  : 2
+	Equipement            : 3
+Jungler  : 
+	Champion              : Jax
+	Pseudonyme            : Emthegem
+	Total Or              : 10351
+	Sbires tues           : 182
+	Soins prodigues       : 11062
+	Tourelles detruites   : 2
+	Nombre d'eliminations : 1
+	Nombre de morts       : 8
+	Nombre d'assistances  : 4
+	Equipement            : 1
+Midlaner : 
+	Champion              : Orianna
+	Pseudonyme            : 6ICKO
+	Total Or              : 15000
+	Sbires tues           : 305
+	Soins prodigues       : 3906
+	Tourelles detruites   : 1
+	Nombre d'eliminations : 5
+	Nombre de morts       : 5
+	Nombre d'assistances  : 7
+	Equipement            : 2
+Adc      :
+	Champion              : Ezreal
+	Pseudonyme            : itspools
+	Total Or              : 11800
+	Sbires tues           : 175
+	Soins prodigues       : 1754
+	Tourelles detruites   : 4
+	Nombre d'eliminations : 4
+	Nombre de morts       : 5
+	Nombre d'assistances  : 2
+	Equipement            : 4
+Support  : 
+	Champion              : Tresh
+	Pseudonyme            : touta
+	Total Or              : 9400
+	Sbires tues           : 60
+	Soins prodigues       : 3340
+	Tourelles detruites   : 0
+	Nombre d'eliminations : 2
+	Nombre de morts       : 7
+	Nombre d'assistances  : 10
+	Equipement            : 5
+
+-----
+
+DÃ©tails du joueur :
+	/*
+	
+	Champion   : trouvable avec ligne 3
+	Kda        : On fait le lien avec le pseudo et on l'affiche avec des /
+	Pseudonyme : trouvable avec ligne 1
+	
+	*/
+	
+	// Sbires tues : Trouvable au dessus egalement
+	
+	Rune principale : Aery
+		Runes secondaires : Ruban de mana / Transcendence / Brulure
+		Runes tertiaires : flash hextech / Savoir cosmique
+
+-----
+
+Avantage en or :
+	Avantage Total : 0 / 84 / 1258 / 34 / 20 / -1578 / -7170
+//Positif = Equipe 1 - Negatif = equipe 2
+// Etant donne que nous le voulons toutes les 5 minutes on ne peut pas calculer depuis les infos precedentes
+	
+	
+	
