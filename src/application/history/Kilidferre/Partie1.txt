@@ -15,6 +15,7 @@ Toplaner :
 	Total Or              : 14956
 	Sbires tues           : 172
 	Soins prodigues       : 5941
+	Degats infliges       : 24512
 	Tourelles detruites   : 0
 	Nombre d'eliminations : 7
 	Nombre de morts       : 0 
@@ -26,6 +27,7 @@ Jungler  :
 	Total Or              : 11840
 	Sbires tues           : 187
 	Soins prodigues       : 7622
+	Degats infliges       : 15344
 	Tourelles detruites   : 0
 	Nombre d'eliminations : 1
 	Nombre de morts       : 3
@@ -37,6 +39,7 @@ Midlaner :
 	Total Or              : 18260
 	Sbires tues           : 267
 	Soins prodigues       : 4009
+	Degats infliges       : 34510
 	Tourelles detruites   : 5
 	Nombre d'eliminations : 15
 	Nombre de morts       : 5
@@ -48,6 +51,7 @@ Adc      :
 	Total Or              : 15800
 	Sbires tues           : 257
 	Soins prodigues       : 2500
+	Degats infliges       : 42514
 	Tourelles detruites   : 1
 	Nombre d'eliminations : 9
 	Nombre de morts       : 3
@@ -59,6 +63,7 @@ Support  :
 	Total Or              : 8957
 	Sbires tues           : 39
 	Soins prodigues       : 5900
+	Degats infliges       : 8745
 	Tourelles detruites   : 0
 	Nombre d'eliminations : 0
 	Nombre de morts       : 3
@@ -74,6 +79,7 @@ Toplaner :
 	Total Or              : 12455
 	Sbires tues           : 241
 	Soins prodigues       : 4000
+	Degats infliges       : 31245
 	Tourelles detruites   : 3
 	Nombre d'eliminations : 2
 	Nombre de morts       : 7
@@ -85,6 +91,7 @@ Jungler  :
 	Total Or              : 10351
 	Sbires tues           : 182
 	Soins prodigues       : 11062
+	Degats infliges       : 25847
 	Tourelles detruites   : 2
 	Nombre d'eliminations : 1
 	Nombre de morts       : 8
@@ -96,6 +103,7 @@ Midlaner :
 	Total Or              : 15000
 	Sbires tues           : 305
 	Soins prodigues       : 3906
+	Degats infliges       : 35874
 	Tourelles detruites   : 1
 	Nombre d'eliminations : 5
 	Nombre de morts       : 5
@@ -107,6 +115,7 @@ Adc      :
 	Total Or              : 11800
 	Sbires tues           : 175
 	Soins prodigues       : 1754
+	Degats infliges       : 12547
 	Tourelles detruites   : 4
 	Nombre d'eliminations : 4
 	Nombre de morts       : 5
@@ -118,6 +127,7 @@ Support  :
 	Total Or              : 9400
 	Sbires tues           : 60
 	Soins prodigues       : 3340
+	Degats infliges       : 6487
 	Tourelles detruites   : 0
 	Nombre d'eliminations : 2
 	Nombre de morts       : 7
@@ -137,9 +147,7 @@ Details du joueur :
 	
 	// Sbires tues : Trouvable au dessus egalement
 	
-	Rune principale : Aery
-		Runes secondaires : Ruban de mana / Transcendence / Brulure
-		Runes tertiaires : flash hextech / Savoir cosmique
+	Rune principale : 1
 
 -----
 

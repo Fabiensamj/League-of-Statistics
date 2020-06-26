@@ -2,7 +2,7 @@ package application;
 
 public class Joueur {
 	
-	int id, totalOr, sbires, soins, tourelles, eliminations, morts, assistances, equipement;
+	int id, totalOr, sbires, soins, tourelles, eliminations, morts, assistances, equipement, degats;
 	String pseudo, champion, kda;
 	
 	public Joueur(int id)
@@ -40,6 +40,14 @@ public class Joueur {
 
 	public void setSoins(int soins) {
 		this.soins = soins;
+	}
+	
+	public int getDegats() {
+		return degats;
+	}
+
+	public void setDegats(int degats) {
+		this.degats = degats;
 	}
 
 	public int getTourelles() {
@@ -110,7 +118,7 @@ public class Joueur {
 
 	@Override
 	public String toString() {
-		return "Joueur [id=" + id + ", totalOr=" + totalOr + ", sbires=" + sbires + ", soins=" + soins + ", tourelles="
+		return "Joueur [id=" + id + ", totalOr=" + totalOr + ", sbires=" + sbires + ", soins=" + soins + ", degats=" + degats+ ", tourelles="
 				+ tourelles + ", eliminations=" + eliminations + ", morts=" + morts + ", assistances=" + assistances
 				+ ", equipement=" + equipement + ", pseudo=" + pseudo + ", champion=" + champion + ", kda=" + kda + "]";
 	}
