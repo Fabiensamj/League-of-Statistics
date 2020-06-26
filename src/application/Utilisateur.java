@@ -27,14 +27,15 @@ public class Utilisateur {
 	}
 	
 	public int getRune()
-    {
-        return this.rune;
-    }
+	{
+		return this.rune;
+	}
+	
+	public void setRune(int rune)
+	{
+		this.rune = rune;
+	}
 
-    public void setRune(int rune)
-    {
-        this.rune = rune;
-    }
 
 	public String getPseudo() {
 		return pseudo;
@@ -196,8 +197,7 @@ public class Utilisateur {
 				+ ",\n moyenneOr=" + this.getMoyenneOr()+ ", moyenneSbires=" + this.getMoyenneSbires() + ", moyenneDegats=" + this.getMoyenneDegats()
 				+ ", moyenneSoins=" + this.getMoyenneSoins() + ", moyenneTourelles=" + this.getMoyenneTourelles() + ", moyenneEliminations="
 				+ this.getMoyenneEliminations() + ", moyenneMorts=" + this.getMoyenneMorts() + ", moyenneAssistances=" + this.getMoyenneAssistances() + "]";
-	}
-	
+	}	
 
 }
 
