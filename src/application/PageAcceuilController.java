@@ -3,6 +3,7 @@ package application;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
@@ -179,6 +181,9 @@ public class PageAcceuilController {
 	@FXML
     private LineChart<Integer,Integer> linechart;
 	
+	@FXML
+	private ImageView ImgClassement;
+	
 ///// Page 2 /////
 	
 	static int numPartie = 0;
@@ -334,8 +339,8 @@ public class PageAcceuilController {
 		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
 		
 		for(int i = 0; i<10;i++) {
-			series.getData().add(new XYChart.Data<>(tab[i][numPartie].champion,tab[i][numPartie].totalOr));
-			System.out.println(tab[i][numPartie].champion + " , " + tab[i][numPartie].totalOr);
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].totalOr));
+			System.out.println(tab[i][1].champion + " , " + tab[i][1].totalOr);
 		}
 		barchart.getData().add(series);
 		barchart.getXAxis().setTickLabelRotation(180);
@@ -349,7 +354,7 @@ public class PageAcceuilController {
 		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
 		
 		for(int i = 0; i<10;i++) {
-			series.getData().add(new XYChart.Data<>(tab[i][numPartie].champion,tab[i][numPartie].sbires));
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].sbires));
 		}
 		barchart.getData().add(series);
 		barchart.getXAxis().setTickLabelRotation(180);
@@ -364,7 +369,7 @@ public class PageAcceuilController {
 		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
 		
 		for(int i = 0; i<10;i++) {
-			series.getData().add(new XYChart.Data<>(tab[i][numPartie].champion,tab[i][numPartie].totalOr));
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].totalOr));
 		}
 		barchart.getData().add(series);
 		barchart.getXAxis().setTickLabelRotation(180);
@@ -379,7 +384,7 @@ public class PageAcceuilController {
 		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
 		
 		for(int i = 0; i<10;i++) {
-			series.getData().add(new XYChart.Data<>(tab[i][numPartie].champion,tab[i][numPartie].soins));
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].soins));
 		}
 		barchart.getData().add(series);
 		barchart.getXAxis().setTickLabelRotation(180);
@@ -394,7 +399,7 @@ public class PageAcceuilController {
 		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
 		
 		for(int i = 0; i<10;i++) {
-			series.getData().add(new XYChart.Data<>(tab[i][numPartie].champion,tab[i][numPartie].tourelles));
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].tourelles));
 			
 		}
 		barchart.getData().add(series);
@@ -410,7 +415,7 @@ public class PageAcceuilController {
 		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
 		
 		for(int i = 0; i<10;i++) {
-			series.getData().add(new XYChart.Data<>(tab[i][numPartie].champion,tab[i][numPartie].eliminations));
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].eliminations));
 		}
 		barchart.getData().add(series);
 		barchart.getXAxis().setTickLabelRotation(180);
@@ -425,7 +430,7 @@ public class PageAcceuilController {
 		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
 		
 		for(int i = 0; i<10;i++) {
-			series.getData().add(new XYChart.Data<>(tab[i][numPartie].champion,tab[i][numPartie].morts));
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].morts));
 		}
 		barchart.getData().add(series);
 		barchart.getXAxis().setTickLabelRotation(180);
@@ -441,7 +446,7 @@ public class PageAcceuilController {
 		XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
 		
 		for(int i = 0; i<10;i++) {
-			series.getData().add(new XYChart.Data<>(tab[i][numPartie].champion,tab[i][numPartie].assistances));
+			series.getData().add(new XYChart.Data<>(tab[i][1].champion,tab[i][1].assistances));
 		}
 		barchart.getData().add(series);
 		barchart.getXAxis().setTickLabelRotation(180);
@@ -451,19 +456,19 @@ public class PageAcceuilController {
     }
 
 	/*
-	 * Graphe en courbe de la partie avantage
-	 */
-	@FXML
+     * Graphe en courbe de la partie avantage
+     */
+    @FXML
     void pushAvantage(ActionEvent event) {
-		linechart.getData().clear();
-		//defining a series
+        linechart.getData().clear();
+        //defining a series
         XYChart.Series<Integer,Integer> series = new XYChart.Series<Integer,Integer>();
         series.setName("Avantage or");
         //populating the series with data
         for(int i = 0; i<7;i++) {
-        	
-        	series.getData().add(new XYChart.Data(Integer.toString(i),Integer.parseInt(lecteur.getAlAvantageGold().get(i))));
-        	System.out.println(lecteur.getAlAvantageGold().get(i));
+            
+            series.getData().add(new XYChart.Data(Integer.toString(i),Integer.parseInt(lecteur.getAlAvantageGold().get(i))));
+            System.out.println(lecteur.getAlAvantageGold().get(i));
         }
         
         linechart.getData().add(series);
@@ -534,17 +539,17 @@ public class PageAcceuilController {
     		InputStream input;
     		Image image;
     		
-    		/*
-    		String logo1 = "/application/Img/champion/" + lecteur.getTabJoueur()[0][numPartie].getChampion() + ".jpg";
-    		String logo2 = "/application/Img/champion/" + lecteur.getTabJoueur()[1][numPartie].getChampion() + ".jpg";
-    		String logo3 = "/application/Img/champion/" + lecteur.getTabJoueur()[2][numPartie].getChampion() + ".jpg";
-    		String logo4 = "/application/Img/champion/" + lecteur.getTabJoueur()[3][numPartie].getChampion() + ".jpg";
-    		String logo5 = "/application/Img/champion/" + lecteur.getTabJoueur()[4][numPartie].getChampion() + ".jpg";
-    		String logo6 = "/application/Img/champion/" + lecteur.getTabJoueur()[5][numPartie].getChampion() + ".jpg";
-    		String logo7 = "/application/Img/champion/" + lecteur.getTabJoueur()[6][numPartie].getChampion() + ".jpg";
-    		String logo8 = "/application/Img/champion/" + lecteur.getTabJoueur()[7][numPartie].getChampion() + ".jpg";
-    		String logo9 = "/application/Img/champion/" + lecteur.getTabJoueur()[8][numPartie].getChampion() + ".jpg";
-    		String logo10 = "/application/Img/champion/" + lecteur.getTabJoueur()[9][numPartie].getChampion() + ".jpg";
+    		
+    		String logo1 = "/application/Img/champion/" + lecteur.getTabJoueur()[0][numPartie].getChampion() + ".png";
+    		String logo2 = "/application/Img/champion/" + lecteur.getTabJoueur()[1][numPartie].getChampion() + ".png";
+    		String logo3 = "/application/Img/champion/" + lecteur.getTabJoueur()[2][numPartie].getChampion() + ".png";
+    		String logo4 = "/application/Img/champion/" + lecteur.getTabJoueur()[3][numPartie].getChampion() + ".png";
+    		String logo5 = "/application/Img/champion/" + lecteur.getTabJoueur()[4][numPartie].getChampion() + ".png";
+    		String logo6 = "/application/Img/champion/" + lecteur.getTabJoueur()[5][numPartie].getChampion() + ".png";
+    		String logo7 = "/application/Img/champion/" + lecteur.getTabJoueur()[6][numPartie].getChampion() + ".png";
+    		String logo8 = "/application/Img/champion/" + lecteur.getTabJoueur()[7][numPartie].getChampion() + ".png";
+    		String logo9 = "/application/Img/champion/" + lecteur.getTabJoueur()[8][numPartie].getChampion() + ".png";
+    		String logo10 = "/application/Img/champion/" + lecteur.getTabJoueur()[9][numPartie].getChampion() + ".png";
     		
     		input = clazz.getResourceAsStream(logo1);
     		image = new Image(input);   		
@@ -585,7 +590,7 @@ public class PageAcceuilController {
     		input = clazz.getResourceAsStream(logo10);
     		image = new Image(input);   		
     		ImgE2C5.setImage(image);
-    		*/
+    		
     		
     		///// Details /////
     		int lienPersJoueur = 0;
@@ -610,13 +615,19 @@ public class PageAcceuilController {
 
     		DetailsItem.setImage(image);
     		
-    		/*
-    		String imgLogo = "/application/Img/champion/" + lecteur.getTabJoueur()[lienPersJoueur][numPartie].getChampion() + ".jpg";
+    		
+    		String imgLogo = "/application/Img/champion/" + lecteur.getTabJoueur()[lienPersJoueur][numPartie].getChampion() + ".png";
     		input = clazz.getResourceAsStream(imgLogo);
     		image = new Image(input);
     		
     		DetailsLogo.setImage(image);
-    		*/
+    		
+    		System.out.printf("Runes : " + lecteur.getUtilisateur().getRune() + "\n");
+    		String imgRunes = "/application/Img/Runes/RunesSet" + lecteur.getUtilisateur().getRune() + "_alpha.png" ;
+    		input = clazz.getResourceAsStream(imgRunes);
+    		image = new Image(input);
+    		
+    		DetailsRunes.setImage(image);
     		
     		///
 			ImgHistorique6.setImage(model1.getImgHistorique1());
@@ -684,12 +695,17 @@ public class PageAcceuilController {
 			TextTourellesDetruites.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneTourelles()));
 			TextClassement.setText(lecteur.getUtilisateur().getElo());
 			
+			
+			Class<?> clazz = this.getClass();
+			String imgClassement = "/application/Img/Rank/" + lecteur.getUtilisateur().getElo() + ".png";
+    		InputStream input = clazz.getResourceAsStream(imgClassement);
+    		Image image = new Image(input);   		
+    		ImgClassement.setImage(image);
 			//faire l'image du classement
-
 			
 			
 			/////////////////////////////////////////////////////////////////////////////////////
-			double Victoire = 75;
+			double Victoire = lecteur.getUtilisateur().getWinrate();
 			double Defaite = (100-Victoire);
 			ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList( 
 					   new PieChart.Data("Victoire", Victoire), 
@@ -1241,11 +1257,10 @@ public class PageAcceuilController {
 		else {}
 	}
 	
-	////////////////////////Generation Historique//////////////////////////////
+	////////////////////////Generation Hisotrique//////////////////////////////
 	
 	@FXML
 	protected void Historique1(MouseEvent e) {
-		
 /*
  * =============================================================
  *       Méthode pour ouvrir l'explorateur de fichier
@@ -1277,9 +1292,9 @@ public class PageAcceuilController {
             System.out.println(f.getAbsolutePath());
             
         }
-
+		
         
-		String champion = "Img/champion/Camille.jpg";
+		String champion = "Img/champion/Camille.png";
 		String result = "Victory";
 		
 		String _kill = "9";
