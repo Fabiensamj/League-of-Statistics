@@ -196,7 +196,7 @@ public class Lecteur {
 			if (tabLignes[cpt].matches("^	Rune principale.*"))
 			{
 				decoup = tabLignes[cpt].split(":");
-				this.utilisateur.setRune((decoup[1].trim()));
+				this.utilisateur.setRune((Integer.parseInt(decoup[1].trim())));
 			}
 			
 			if (tabLignes[cpt].matches("^	Avantage Total .*"))
@@ -280,10 +280,10 @@ public class Lecteur {
 		return utilisateur;
 	}
 	
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		Lecteur l = new Lecteur("Theh2zo", 3);
-	}*/
+	}
 }
 
 
