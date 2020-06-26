@@ -196,7 +196,7 @@ public class Lecteur {
 			if (tabLignes[cpt].matches("^	Rune principale.*"))
 			{
 				decoup = tabLignes[cpt].split(":");
-				this.utilisateur.setRune((decoup[1].trim()));
+				this.utilisateur.setRune((Integer.parseInt(decoup[1].trim())));
 			}
 			
 			if (tabLignes[cpt].matches("^	Avantage Total .*"))

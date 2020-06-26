@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Utilisateur {
 	
@@ -9,9 +10,10 @@ public class Utilisateur {
 	int nbDefaites = 0;
 	int nbParties;
 	double winrate;
-	String elo = "D4 87LP";
+	String elo;
+	String[] tabElo = {"Bronze","Silver","Gold","Platine","Diamant"};
 	ArrayList<String> alChamp = new ArrayList<String>();
-	String rune;
+	int rune;
 	
 	int totalOr = 0, totalSbires = 0, totalDegats = 0, totalSoins = 0, totalTourelles = 0, totalEliminations = 0, totalMorts = 0, totalAssistances = 0;
 	
@@ -20,17 +22,19 @@ public class Utilisateur {
 	public Utilisateur (String pseudo)
 	{
 		this.pseudo = pseudo;
+		Random rand = new Random(); 
+		this.elo = this.tabElo[rand.nextInt(this.tabElo.length )];
 	}
 	
-	public String getRune()
-	{
-		return this.rune;
-	}
-	
-	public void setRune(String rune)
-	{
-		this.rune = rune;
-	}
+	public int getRune()
+    {
+        return this.rune;
+    }
+
+    public void setRune(int rune)
+    {
+        this.rune = rune;
+    }
 
 
 	public String getPseudo() {
@@ -193,7 +197,8 @@ public class Utilisateur {
 				+ ",\n moyenneOr=" + this.getMoyenneOr()+ ", moyenneSbires=" + this.getMoyenneSbires() + ", moyenneDegats=" + this.getMoyenneDegats()
 				+ ", moyenneSoins=" + this.getMoyenneSoins() + ", moyenneTourelles=" + this.getMoyenneTourelles() + ", moyenneEliminations="
 				+ this.getMoyenneEliminations() + ", moyenneMorts=" + this.getMoyenneMorts() + ", moyenneAssistances=" + this.getMoyenneAssistances() + "]";
-	}	
+	}
+	
 
 }
 

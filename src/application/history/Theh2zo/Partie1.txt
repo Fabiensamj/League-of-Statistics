@@ -147,7 +147,7 @@ Details du joueur :
 	
 	// Sbires tues : Trouvable au dessus egalement
 	
-	Rune principale : Deluge de lames
+	Rune principale : 1
 
 -----
 
