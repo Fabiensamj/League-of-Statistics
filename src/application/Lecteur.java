@@ -39,6 +39,7 @@ public class Lecteur {
 			
 			utilisateur = new Utilisateur(user);
 			utilisateur.setNbParties(nbParties);
+			System.out.println(utilisateur.getElo());
 			while ( this.numPartie < nbParties)
 			{
 				this.cptJoueur = 0;
