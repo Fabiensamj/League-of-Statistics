@@ -26,7 +26,7 @@
          <children>
             <Button id="BtnChargerPartie" layoutY="-3.0" mnemonicParsing="false" onMouseClicked="#Historique2" prefHeight="58.0" prefWidth="231.0" text="Charger Partie" textOverrun="WORD_ELLIPSIS" />
             <ListView id="Historique" layoutY="55.0" prefHeight="469.0" prefWidth="231.0" />
-            <Pane layoutY="71.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+            <Pane layoutY="71.0" onMouseClicked="#PushHistorique1" prefHeight="74.0" prefWidth="231.0">
                <children>
                   <ImageView id="ImgHistorique1" fx:id="ImgHistorique6" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />
@@ -42,7 +42,7 @@
                   <Label layoutX="129.0" layoutY="43.0" text="/" />
                </children>
             </Pane>
-            <Pane layoutY="164.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+            <Pane layoutY="164.0" onMouseClicked="#PushHistorique2" prefHeight="74.0" prefWidth="231.0">
                <children>
                   <ImageView id="ImgHistorique2" fx:id="ImgHistorique7" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />
@@ -58,7 +58,7 @@
                   <Label id="Date_Annee2" fx:id="Date_Annee7" layoutX="135.0" layoutY="45.0" />
                </children>
             </Pane>
-            <Pane layoutY="253.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+            <Pane layoutY="253.0" onMouseClicked="#PushHistorique3" prefHeight="74.0" prefWidth="231.0">
                <children>
                   <ImageView id="ImgHistorique3" fx:id="ImgHistorique8" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />
@@ -74,7 +74,7 @@
                   <Label id="Date_Annee3" fx:id="Date_Annee8" layoutX="136.0" layoutY="39.0" />
                </children>
             </Pane>
-            <Pane layoutY="342.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+            <Pane layoutY="342.0" onMouseClicked="#PushHistorique4" prefHeight="74.0" prefWidth="231.0">
                <children>
                   <ImageView id="ImgHistorique4" fx:id="ImgHistorique9" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />
@@ -90,7 +90,7 @@
                   <Label id="Date_Annee4" fx:id="Date_Annee9" layoutX="136.0" layoutY="43.0" />
                </children>
             </Pane>
-            <Pane layoutY="431.0" onMouseClicked="#PushHistorique" prefHeight="74.0" prefWidth="231.0">
+            <Pane layoutY="431.0" onMouseClicked="#PushHistorique5" prefHeight="74.0" prefWidth="231.0">
                <children>
                   <ImageView id="ImgHistorique5" fx:id="ImgHistorique10" fitHeight="38.0" fitWidth="53.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="21.0" layoutY="43.0" text="/" />

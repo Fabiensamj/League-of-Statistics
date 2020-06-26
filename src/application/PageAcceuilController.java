@@ -218,6 +218,9 @@ public class PageAcceuilController {
 	protected void PushConnexion(ActionEvent e) throws IOException {
 			lecteur = new Lecteur(Nom.getText(), 3);
 			if(lecteur.getUtilisateur().getMoyenneDegats() == 0){
+                System.out.println("Votre pseudo n'existe pas dans la base de donnée de l'application.");
+            }
+			if(lecteur.getUtilisateur().getMoyenneDegats() == 0){
 				System.out.println("Votre pseudo n'existe pas dans la base de donnée de l'application.");
 			}
 			else{
@@ -299,14 +302,83 @@ public class PageAcceuilController {
 		model1.setDate_Annee5(null);
 	}
 	
+	protected int NumPartie(String s) {
+		if(s == "Partie1.txt") {
+			return 0;
+		}
+		else if(s == "Partie1.txt") {
+			return 1;
+		}
+		else if(s == "Partie1.txt") {
+			return 2;
+		}
+		return 0;
+	}
+	
 	@FXML
-	protected void PushHistorique(MouseEvent e)throws IOException {
+	protected void PushHistorique1(MouseEvent e)throws IOException {
 		Parent home_p = FXMLLoader.load(getClass().getResource("Page2.fxml"));
 		Scene home_s = new Scene(home_p);
 		Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		app_stage.setScene(home_s);
 		app_stage.show();
-		numPartie = 0;
+		numPartie = NumPartie(model1.getNom_partie1());
+		chapardage = 1;
+		chapardage2 = 1;
+		chapardage3 = 1;
+		
+		
+	}
+	@FXML
+	protected void PushHistorique2(MouseEvent e)throws IOException {
+		Parent home_p = FXMLLoader.load(getClass().getResource("Page2.fxml"));
+		Scene home_s = new Scene(home_p);
+		Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		app_stage.setScene(home_s);
+		app_stage.show();
+		numPartie = NumPartie(model1.getNom_partie2());
+		chapardage = 1;
+		chapardage2 = 1;
+		chapardage3 = 1;
+		
+		
+	}
+	@FXML
+	protected void PushHistorique3(MouseEvent e)throws IOException {
+		Parent home_p = FXMLLoader.load(getClass().getResource("Page2.fxml"));
+		Scene home_s = new Scene(home_p);
+		Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		app_stage.setScene(home_s);
+		app_stage.show();
+		numPartie = NumPartie(model1.getNom_partie3());
+		chapardage = 1;
+		chapardage2 = 1;
+		chapardage3 = 1;
+		
+		
+	}
+	@FXML
+	protected void PushHistorique4(MouseEvent e)throws IOException {
+		Parent home_p = FXMLLoader.load(getClass().getResource("Page2.fxml"));
+		Scene home_s = new Scene(home_p);
+		Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		app_stage.setScene(home_s);
+		app_stage.show();
+		numPartie = NumPartie(model1.getNom_partie4());
+		chapardage = 1;
+		chapardage2 = 1;
+		chapardage3 = 1;
+		
+		
+	}
+	@FXML
+	protected void PushHistorique5(MouseEvent e)throws IOException {
+		Parent home_p = FXMLLoader.load(getClass().getResource("Page2.fxml"));
+		Scene home_s = new Scene(home_p);
+		Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+		app_stage.setScene(home_s);
+		app_stage.show();
+		numPartie = NumPartie(model1.getNom_partie5());
 		chapardage = 1;
 		chapardage2 = 1;
 		chapardage3 = 1;
@@ -1284,27 +1356,13 @@ public class PageAcceuilController {
         File f = fc.showOpenDialog(stage);
         
         if (f != null) {
-        	/*
-            //Desktop dt = Desktop.getDesktop();
-            //dt.open(f);
-            if(!folder.exists()) {
-                folder.mkdir();
-                
-                try {
-                	File dest = new File("application/history/"+lecteur.getUtilisateur().pseudo+"/");
-                    System.out.println(dest.getAbsolutePath());
-                    Files.copy(f.toPath(), dest.toPath());
-                } catch (IOException e1) {
-                    // TODO Auto-generated catch block
-                    e1.printStackTrace();
-                }
-                
-            }*/
+        	
         	
             System.out.println("Nom partie : " + f.getName());
-            
+            //model1.setNom_partie1(f.getName());
         }
-		
+        
+		 
         
 		String champion = "Img/champion/Camille.png";
 		String result = "Victory";
@@ -1360,6 +1418,7 @@ public class PageAcceuilController {
 																						model1.setDate_Mois1(date_Mois);
 																						Date_Annee1.setText(date_Annee);
 																						model1.setDate_Annee1(date_Annee);
+																						model1.setNom_partie1(f.getName());
 																					}
 																					else {
 																						ImgHistorique5.setImage(img_champ);
@@ -1378,6 +1437,7 @@ public class PageAcceuilController {
 																						model1.setDate_Mois5(date_Mois);
 																						Date_Annee5.setText(date_Annee);
 																						model1.setDate_Annee5(date_Annee);
+																						model1.setNom_partie5(f.getName());
 																					}
 																				}
 																				else {
@@ -1397,6 +1457,7 @@ public class PageAcceuilController {
 																					model1.setDate_Mois4(date_Mois);
 																					Date_Annee4.setText(date_Annee);
 																					model1.setDate_Annee4(date_Annee);
+																					model1.setNom_partie4(f.getName());
 																				}
 																			}
 																			else {
@@ -1416,6 +1477,7 @@ public class PageAcceuilController {
 																				model1.setDate_Mois3(date_Mois);
 																				Date_Annee3.setText(date_Annee);
 																				model1.setDate_Annee3(date_Annee);
+																				model1.setNom_partie3(f.getName());
 																			}
 																		}
 																		else {
@@ -1435,6 +1497,7 @@ public class PageAcceuilController {
 																			model1.setDate_Mois2(date_Mois);
 																			Date_Annee2.setText(date_Annee);
 																			model1.setDate_Annee2(date_Annee);
+																			model1.setNom_partie2(f.getName());
 																		}
 																	}
 																	else {
@@ -1454,6 +1517,7 @@ public class PageAcceuilController {
 																		model1.setDate_Mois1(date_Mois);
 																		Date_Annee1.setText(date_Annee);
 																		model1.setDate_Annee1(date_Annee);
+																		model1.setNom_partie1(f.getName());
 																	}
 																	
 																}
@@ -1474,6 +1538,7 @@ public class PageAcceuilController {
 																	model1.setDate_Mois5(date_Mois);
 																	Date_Annee5.setText(date_Annee);
 																	model1.setDate_Annee5(date_Annee);
+																	model1.setNom_partie5(f.getName());
 																}
 															}
 															else {
@@ -1493,6 +1558,7 @@ public class PageAcceuilController {
 																model1.setDate_Mois4(date_Mois);
 																Date_Annee4.setText(date_Annee);
 																model1.setDate_Annee4(date_Annee);
+																model1.setNom_partie4(f.getName());
 															}
 														}
 														else {
@@ -1512,6 +1578,7 @@ public class PageAcceuilController {
 															model1.setDate_Mois3(date_Mois);
 															Date_Annee3.setText(date_Annee);
 															model1.setDate_Annee3(date_Annee);
+															model1.setNom_partie3(f.getName());
 														}
 													}
 													else {
@@ -1531,6 +1598,7 @@ public class PageAcceuilController {
 														model1.setDate_Mois2(date_Mois);
 														Date_Annee2.setText(date_Annee);
 														model1.setDate_Annee2(date_Annee);
+														model1.setNom_partie2(f.getName());
 													}
 												}
 												else {
@@ -1550,6 +1618,7 @@ public class PageAcceuilController {
 													model1.setDate_Mois1(date_Mois);
 													Date_Annee1.setText(date_Annee);
 													model1.setDate_Annee1(date_Annee);
+													model1.setNom_partie1(f.getName());
 												}
 												
 											}
@@ -1570,6 +1639,7 @@ public class PageAcceuilController {
 												model1.setDate_Mois5(date_Mois);
 												Date_Annee5.setText(date_Annee);
 												model1.setDate_Annee5(date_Annee);
+												model1.setNom_partie5(f.getName());
 											}
 										}
 										else {
@@ -1589,6 +1659,7 @@ public class PageAcceuilController {
 											model1.setDate_Mois4(date_Mois);
 											Date_Annee4.setText(date_Annee);
 											model1.setDate_Annee4(date_Annee);
+											model1.setNom_partie4(f.getName());
 										}
 									}
 									else {
@@ -1608,6 +1679,7 @@ public class PageAcceuilController {
 										model1.setDate_Mois3(date_Mois);
 										Date_Annee3.setText(date_Annee);
 										model1.setDate_Annee3(date_Annee);
+										model1.setNom_partie3(f.getName());
 									}
 								}
 								else {
@@ -1627,6 +1699,7 @@ public class PageAcceuilController {
 									model1.setDate_Mois2(date_Mois);
 									Date_Annee2.setText(date_Annee);
 									model1.setDate_Annee2(date_Annee);
+									model1.setNom_partie2(f.getName());
 								}
 							}
 							else {
@@ -1646,6 +1719,7 @@ public class PageAcceuilController {
 								model1.setDate_Mois1(date_Mois);
 								Date_Annee1.setText(date_Annee);
 								model1.setDate_Annee1(date_Annee);
+								model1.setNom_partie1(f.getName());
 							}
 							
 						}
@@ -1666,6 +1740,7 @@ public class PageAcceuilController {
 							model1.setDate_Mois5(date_Mois);
 							Date_Annee5.setText(date_Annee);
 							model1.setDate_Annee5(date_Annee);
+							model1.setNom_partie5(f.getName());
 						}
 					}
 					else {
@@ -1685,6 +1760,7 @@ public class PageAcceuilController {
 						model1.setDate_Mois4(date_Mois);
 						Date_Annee4.setText(date_Annee);
 						model1.setDate_Annee4(date_Annee);
+						model1.setNom_partie4(f.getName());
 					}
 				}
 				else {
@@ -1704,6 +1780,7 @@ public class PageAcceuilController {
 					model1.setDate_Mois3(date_Mois);
 					Date_Annee3.setText(date_Annee);
 					model1.setDate_Annee3(date_Annee);
+					model1.setNom_partie3(f.getName());
 				}
 			}
 			
@@ -1724,6 +1801,7 @@ public class PageAcceuilController {
 				model1.setDate_Mois2(date_Mois);
 				Date_Annee2.setText(date_Annee);
 				model1.setDate_Annee2(date_Annee);
+				model1.setNom_partie2(f.getName());
 			}
 		}
 		else { // Remplir la premiï¿½re case
@@ -1743,6 +1821,7 @@ public class PageAcceuilController {
 			model1.setDate_Mois1(date_Mois);
 			Date_Annee1.setText(date_Annee);
 			model1.setDate_Annee1(date_Annee);
+			model1.setNom_partie1(f.getName());
 		}
 	}
 	
@@ -1901,6 +1980,7 @@ public class PageAcceuilController {
 																						model1.setDate_Mois1(date_Mois);
 																						Date_Annee6.setText(date_Annee);
 																						model1.setDate_Annee1(date_Annee);
+																						model1.setNom_partie1(f.getName());
 																					}
 																					else {
 																						ImgHistorique10.setImage(img_champ);
@@ -1919,6 +1999,7 @@ public class PageAcceuilController {
 																						model1.setDate_Mois5(date_Mois);
 																						Date_Annee10.setText(date_Annee);
 																						model1.setDate_Annee5(date_Annee);
+																						model1.setNom_partie5(f.getName());
 																					}
 																				}
 																				else {
@@ -1938,6 +2019,7 @@ public class PageAcceuilController {
 																					model1.setDate_Mois4(date_Mois);
 																					Date_Annee9.setText(date_Annee);
 																					model1.setDate_Annee4(date_Annee);
+																					model1.setNom_partie4(f.getName());
 																				}
 																			}
 																			else {
@@ -1957,6 +2039,7 @@ public class PageAcceuilController {
 																				model1.setDate_Mois3(date_Mois);
 																				Date_Annee8.setText(date_Annee);
 																				model1.setDate_Annee3(date_Annee);
+																				model1.setNom_partie3(f.getName());
 																			}
 																		}
 																		else {
@@ -1976,6 +2059,7 @@ public class PageAcceuilController {
 																			model1.setDate_Mois2(date_Mois);
 																			Date_Annee7.setText(date_Annee);
 																			model1.setDate_Annee2(date_Annee);
+																			model1.setNom_partie2(f.getName());
 																		}
 																	}
 																	else {
@@ -1995,6 +2079,7 @@ public class PageAcceuilController {
 																		model1.setDate_Mois1(date_Mois);
 																		Date_Annee6.setText(date_Annee);
 																		model1.setDate_Annee1(date_Annee);
+																		model1.setNom_partie1(f.getName());
 																	}
 																	
 																}
@@ -2015,6 +2100,7 @@ public class PageAcceuilController {
 																	model1.setDate_Mois5(date_Mois);
 																	Date_Annee10.setText(date_Annee);
 																	model1.setDate_Annee5(date_Annee);
+																	model1.setNom_partie5(f.getName());
 																}
 															}
 															else {
@@ -2034,6 +2120,7 @@ public class PageAcceuilController {
 																model1.setDate_Mois4(date_Mois);
 																Date_Annee9.setText(date_Annee);
 																model1.setDate_Annee4(date_Annee);
+																model1.setNom_partie4(f.getName());
 															}
 														}
 														else {
@@ -2053,6 +2140,7 @@ public class PageAcceuilController {
 															model1.setDate_Mois3(date_Mois);
 															Date_Annee8.setText(date_Annee);
 															model1.setDate_Annee3(date_Annee);
+															model1.setNom_partie3(f.getName());
 														}
 													}
 													else {
@@ -2072,6 +2160,7 @@ public class PageAcceuilController {
 														model1.setDate_Mois2(date_Mois);
 														Date_Annee7.setText(date_Annee);
 														model1.setDate_Annee2(date_Annee);
+														model1.setNom_partie2(f.getName());
 													}
 												}
 												else {
@@ -2091,6 +2180,7 @@ public class PageAcceuilController {
 													model1.setDate_Mois1(date_Mois);
 													Date_Annee6.setText(date_Annee);
 													model1.setDate_Annee1(date_Annee);
+													model1.setNom_partie1(f.getName());
 												}
 												
 											}
@@ -2111,6 +2201,7 @@ public class PageAcceuilController {
 												model1.setDate_Mois5(date_Mois);
 												Date_Annee10.setText(date_Annee);
 												model1.setDate_Annee5(date_Annee);
+												model1.setNom_partie5(f.getName());
 											}
 										}
 										else {
@@ -2130,6 +2221,7 @@ public class PageAcceuilController {
 											model1.setDate_Mois4(date_Mois);
 											Date_Annee9.setText(date_Annee);
 											model1.setDate_Annee4(date_Annee);
+											model1.setNom_partie4(f.getName());
 										}
 									}
 									else {
@@ -2149,6 +2241,7 @@ public class PageAcceuilController {
 										model1.setDate_Mois3(date_Mois);
 										Date_Annee8.setText(date_Annee);
 										model1.setDate_Annee3(date_Annee);
+										model1.setNom_partie3(f.getName());
 									}
 								}
 								else {
@@ -2168,6 +2261,7 @@ public class PageAcceuilController {
 									model1.setDate_Mois2(date_Mois);
 									Date_Annee7.setText(date_Annee);
 									model1.setDate_Annee2(date_Annee);
+									model1.setNom_partie2(f.getName());
 								}
 							}
 							else {
@@ -2187,6 +2281,7 @@ public class PageAcceuilController {
 								model1.setDate_Mois1(date_Mois);
 								Date_Annee6.setText(date_Annee);
 								model1.setDate_Annee1(date_Annee);
+								model1.setNom_partie1(f.getName());
 							}
 							
 						}
@@ -2207,6 +2302,7 @@ public class PageAcceuilController {
 							model1.setDate_Mois5(date_Mois);
 							Date_Annee10.setText(date_Annee);
 							model1.setDate_Annee5(date_Annee);
+							model1.setNom_partie5(f.getName());
 						}
 					}
 					else {
@@ -2226,6 +2322,7 @@ public class PageAcceuilController {
 						model1.setDate_Mois4(date_Mois);
 						Date_Annee9.setText(date_Annee);
 						model1.setDate_Annee4(date_Annee);
+						model1.setNom_partie4(f.getName());
 					}
 				}
 				else {
@@ -2245,6 +2342,7 @@ public class PageAcceuilController {
 					model1.setDate_Mois3(date_Mois);
 					Date_Annee8.setText(date_Annee);
 					model1.setDate_Annee3(date_Annee);
+					model1.setNom_partie3(f.getName());
 				}
 			}
 			
@@ -2265,6 +2363,7 @@ public class PageAcceuilController {
 				model1.setDate_Mois2(date_Mois);
 				Date_Annee7.setText(date_Annee);
 				model1.setDate_Annee2(date_Annee);
+				model1.setNom_partie2(f.getName());
 			}
 		}
 		else { // Remplir la premiï¿½re case
@@ -2284,6 +2383,7 @@ public class PageAcceuilController {
 			model1.setDate_Mois1(date_Mois);
 			Date_Annee6.setText(date_Annee);
 			model1.setDate_Annee1(date_Annee);
+			model1.setNom_partie1(f.getName());
 		}
 	}
 	

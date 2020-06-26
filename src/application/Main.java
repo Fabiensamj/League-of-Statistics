@@ -24,6 +24,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.getIcons().add(new Image("file:application/Img/Logo.png"));
 			primaryStage.setTitle("League of Statistics");
+			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
