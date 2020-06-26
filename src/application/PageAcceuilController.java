@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -41,6 +43,7 @@ public class PageAcceuilController {
 	private int chapardage = 1;// Bloque les mises a jour des mouseMove sur les pane
 	private int chapardage2 = 1;
 	private int chapardage3 = 1;
+	private int data = 1;
 	
 	public static Lecteur lecteur;
 	
@@ -214,16 +217,18 @@ public class PageAcceuilController {
 	@FXML
 	protected void PushConnexion(ActionEvent e) throws IOException {
 			lecteur = new Lecteur(Nom.getText(), 3);
-			System.out.printf("PSEUDO : " + lecteur.getUtilisateur().getPseudo());
-			Parent home_p = FXMLLoader.load(getClass().getResource("Page1.fxml"));
-			Scene home_s = new Scene(home_p);
-			Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-			app_stage.setScene(home_s);
-			
-			app_stage.show();
-			
-			
-			
+			if(lecteur.getUtilisateur().getMoyenneDegats() == 0){
+				System.out.println("Votre pseudo n'existe pas dans la base de donnée de l'application.");
+			}
+			else{
+				System.out.printf("PSEUDO : " + lecteur.getUtilisateur().getPseudo());
+				Parent home_p = FXMLLoader.load(getClass().getResource("Page1.fxml"));
+				Scene home_s = new Scene(home_p);
+				Stage app_stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+				app_stage.setScene(home_s);
+				
+				app_stage.show();
+			}				
 	}
 	
 	@FXML
@@ -478,7 +483,10 @@ public class PageAcceuilController {
 	@FXML
     void initPage2(MouseEvent event) {
     	//System.out.printf("Insertion des données Page 2");
-    	if(chapardage2 == 1){
+		if(lecteur.getTabJoueur() == null){
+			data = 0;
+		}
+    	if(chapardage2 == 1 && data == 1){
     		System.out.printf("Insertion des données Page 2 \n");
     		
     		TextNomInvocateur.setText(lecteur.getUtilisateur().getPseudo());
@@ -682,7 +690,10 @@ public class PageAcceuilController {
 	
 	@FXML
 	protected void TauxVictoire(MouseEvent e) {
-		if (chapardage ==1) {
+		if(lecteur.getTabJoueur() == null){
+			data = 0;
+		}
+		if (chapardage == 1 && data == 1) {
 			
 			TextNomInvocateur.setText(lecteur.getUtilisateur().getPseudo());
 			TextNombreDor.setText(Integer.toString(lecteur.getUtilisateur().getMoyenneOr()));
@@ -714,9 +725,9 @@ public class PageAcceuilController {
 			chapardage =0;
 			/////////////////////////////////////////////////////////////////////////////////////
 	
-			int degats = 2500;
-			int soin = 4800;
-			int tanker = 100;
+			int degats = lecteur.getUtilisateur().getMoyenneDegats();
+			int soin = lecteur.getUtilisateur().getMoyenneSoins();
+			int tanker = lecteur.getUtilisateur().getMoyenneDegats();
 	
 			GraphDiagram.getPoints().clear();
 	
@@ -1266,7 +1277,6 @@ public class PageAcceuilController {
  *       Méthode pour ouvrir l'explorateur de fichier
  * =============================================================
  */
-        File folder = new File("C://Users/fabie/git/League-of-Statistics/src/application/history/"+lecteur.getUtilisateur().pseudo+"/");
         List<String> loadedFile = new ArrayList<String>();
         loadedFile.add("*.txt");
         FileChooser fc = new FileChooser();
@@ -1274,22 +1284,24 @@ public class PageAcceuilController {
         File f = fc.showOpenDialog(stage);
         
         if (f != null) {
+        	/*
             //Desktop dt = Desktop.getDesktop();
             //dt.open(f);
             if(!folder.exists()) {
                 folder.mkdir();
                 
                 try {
-                    File dest = new File("C://Users/fabie/git/League-of-Statistics/src/application/history/"+lecteur.getUtilisateur().pseudo+"/"+f.getName());
-                    System.out.println(folder.getAbsolutePath());
+                	File dest = new File("application/history/"+lecteur.getUtilisateur().pseudo+"/");
+                    System.out.println(dest.getAbsolutePath());
                     Files.copy(f.toPath(), dest.toPath());
                 } catch (IOException e1) {
                     // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
                 
-            }
-            System.out.println(f.getAbsolutePath());
+            }*/
+        	
+            System.out.println("Nom partie : " + f.getName());
             
         }
 		
@@ -1825,9 +1837,17 @@ public class PageAcceuilController {
 	@FXML
 	protected void Historique2(MouseEvent e) {
 		
-		
+		List<String> loadedFile = new ArrayList<String>();
+        loadedFile.add("*.txt");
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(new ExtensionFilter("Document texte",loadedFile));
+        File f = fc.showOpenDialog(stage);
         
-		String champion = "Img/champion/Camille.jpg";
+        if (f != null) {    	
+            System.out.println("Nom partie : " + f.getName());
+        }
+        
+		String champion = "Img/champion/Camille.png";
 		String result = "Victory";
 		
 		String _kill = "9";
