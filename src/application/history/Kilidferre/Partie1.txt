@@ -147,9 +147,7 @@ Details du joueur :
 	
 	// Sbires tues : Trouvable au dessus egalement
 	
-	Rune principale : Aery
-		Runes secondaires : Ruban de mana / Transcendence / Brulure
-		Runes tertiaires : flash hextech / Savoir cosmique
+	Rune principale : 1
 
 -----
 

@@ -280,10 +280,10 @@ public class Lecteur {
 		return utilisateur;
 	}
 	
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		Lecteur l = new Lecteur("Theh2zo", 3);
-	}*/
+	}
 }
 
 
